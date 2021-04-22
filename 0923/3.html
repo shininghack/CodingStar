@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    var student = new Object();
+    student.name="lgg";
+    student.weight="75";
+    var teacher={name:"sjf",age:18,weight:75,job:"teacher"};
+    var students=[{name:"cjw",age:18,weight:75,job:"teacher"},
+    {name:"cjn",age:18,weight:75,job:"teacher"},
+    {name:"jjy",age:18,weight:75,job:"teacher"},
+    {name:"cwx",age:18,weight:75,job:"teacher"}]
+//在没有索引的对象中，必须通过for in来遍历所有的key或value。
+for (x in teacher) {   //x代表的key，如果想遍历value则使用teacher[x]
+    document.write(x) // statement
+}
+alert(teacher);
+for (var i=0;i<students.length;i++){
+    alert(students[i].name)
+}
+    console.log(teacher.name);
+    console.log(students[3].name)
+
+
+</script>

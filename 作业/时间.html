@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var zms = 8420180
+
+
+        var zd = Math.floor(zms/60/60/24);
+        var zh = Math.floor(zms/60/60%24);
+        var zm = Math.floor(zms/60%60);
+        var zmi = Math.floor(zms%60);
+
+        document.write("还剩"+zd+"mm"+zh+"hh"+zm+"mm"+zmi+"ss");
+
+
+    </script>
+</body>
+</html>

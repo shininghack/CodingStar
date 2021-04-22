@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="../jquery-3.5.1/jquery-3.5.1.js">
+    </script>
+    <script>
+
+        $(function  (argument) {
+              //DOM->jQuery
+              var d1 = document.getElementsByTagName("div")[0];
+              var dd1=$(d1);
+              alert(dd1.html()); //转化成jQuery
+              //jq->DOM
+              var $divs=$("div");
+              var d2=$divs[1]; //转化成DOM，方法1
+              var d3=$divs.get(2);//转化成DOM，方法2
+              alert(d2.innerHTML);
+              alert(d3.innerHTML);
+              //不可alert(d3.html()) 
+
+        });
+    </script>
+</head>
+<body>
+<div>1d</div>
+<div>2d</div>
+<div>3d</div>
+<div>4d</div>
+<div>5d</div>
+<img src="../images/Koala.jpg" alt="">
+</body>
+</html>

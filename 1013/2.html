@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>onmouseover&onmouseenter</title>
+    <style> 
+        #outer{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 100px;
+            border: 1px solid #ccc;
+        }
+        #inner{
+            position: absolute;
+            left: -50px;
+            top: 0;
+            width: 100px;
+            height: 100px;
+            border: 1px solid #ccc;
+        }       
+    </style>
+</head>
+<body>
+    <div id="outer">    
+        <div id="inner"></div>
+    </div>
+    <script>
+        outer.onmouseenter = function(e){
+            console.log(e.target.id) // outer
+        }
+        outer.onmouseover = function(e){
+            console.log(e.target.id) // inner
+        }
+        
+    </script>
+</body>
+</html>

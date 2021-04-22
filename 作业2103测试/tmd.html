@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        .wrap{
+            width: 630px;
+            height: 394px;
+            padding: 10px 0 0 10px;
+            background: #000;
+            overflow: hidden;
+            border: 1px solid #fff;
+        }
+        li{
+            list-style: none;
+        }
+        .wrap>ul>li{
+            float: left;
+            padding: 0 10px 10px 0;
+        }
+
+    </style>
+    <script src="jquery-1.5.1.js"></script>
+    <script>
+        $(function (argument) {
+             $(".wrap>ul>li").mouseover(function(event) {
+                $(this).css('opacity','0.5').siblings().css('opacity', '1');  /* Act on the event */
+             });
+             $(".wrap>ul>li").mouseout(function(event) {
+                $(".wrap>ul>li").css('opacity', '1');  /* Act on the event */
+             });
+
+})
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <ul>
+            <li><a href="#"><img src="images/01.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/02.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/03.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/04.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/05.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/06.jpg" alt=""></a></li>
+        </ul>       
+    </div>
+</body>
+</html>

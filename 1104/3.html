@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+     <style>
+        body{height: 5000px;}
+    </style>
+</head>
+<body>
+    <script>
+        document.body.onclick=funcion()
+        //window.moveTo(100,100)
+        //window.resizeTo(100,100);
+        //window.scrollTo(0,500);
+        document.body.ondblclick=funcion(){
+            setInterval("window.scrollBy(0,10)",100);
+        }
+    </script>
+</body>
+</html>

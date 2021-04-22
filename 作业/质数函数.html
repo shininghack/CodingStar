@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function isSushu(n){
+            var pd=1
+            for(i=2;i<=n/2;i++){
+                if(n%i==0){
+                    pd=0;
+                    break;
+                }
+            }
+            return pd;
+        }
+        var c =0;
+        for(var j=2;j<10000;j++){
+            if(isSushu(j)){
+                document.write(j+"&nbsp&nbsp&nbsp");
+                c++;
+                if(c%5==0){
+                    document.write("<br>");
+                }
+            }
+        }
+
+
+    </script>
+</body>
+</html>

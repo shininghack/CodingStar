@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="checkbox" class="ck">
+    <input type="checkbox" class="ck">
+    <input type="checkbox" class="ck">
+    <input type="checkbox" class="ck">
+    <input type="checkbox" class="ck">
+    <input type="checkbox" class="ck">
+    <input type="checkbox" class="ck">
+    <input type="checkbox" class="ck">
+    <input type="checkbox" class="ck">
+    <input type="checkbox" class="ck">
+    <input type="button" value="全选" class="getAll">
+    <input type="button" value="取消全选" class="getAllNo">
+    <input type="button" value="反选" class="getBack">
+    <input type="button" value="取消反选" class="getBackNo">
+</body>
+</html>
+<script>
+    var cks=document.getElementsByClassName("ck");
+    var getAll=document.getElementsByClassName("getAll")[0];
+    var getAllNo=document.getElementsByClassName("getAllNo")[0];
+    var getBack=document.getElementsByClassName("getBack")[0];
+    var getBackNo=document.getElementsByClassName("getBackNo")[0];
+    getAll.onclick=function(){
+        for(var i=0;i<cks.length;i++){
+            cks[i].checked=true;
+        }
+    }
+
+    getAllNo.onclick=function(){
+        for(var i=0;i<cks.length;i++){
+            cks[i].checked=false;
+        }
+    }
+    getBack.onclick=function(){
+        for(var i=0;i<cks.length;i++){
+            /*if(cks[i].checked==false){
+                cks[i].checked=true;
+            }else if (cks[i].checked==true) {
+                cks[i].checked=false;
+            }*/
+
+            //cks[i].checked==false?cks[i].checked=true:cks[i].checked=false;
+            cks[i].checked=!cks[i].checked   
+            }
+        }
+</script>

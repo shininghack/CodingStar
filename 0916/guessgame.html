@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    var rnd = parseInt(Math.random()*99)+1;
+
+    while (1) {
+        var a=parseInt(prompt("猜猜看"));
+            console.log(a);
+            console.log(rnd);
+        if (a>rnd) {
+            alert("猜大了，再猜猜");
+            
+            // statement
+        }else if(a<rnd){
+            alert("猜小了，再猜猜");
+        }else {
+             alert("猜对了！！！");
+             break;
+        }
+
+    }
+
+
+</script>

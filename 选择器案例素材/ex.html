@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+	<style>
+		*{margin: 0;padding: 0;}
+		.wrapper{
+			width: 300px;
+			height: 250px;
+			border: 1px solid pink;
+			overflow: hidden;
+            margin: 50px auto;
+		}
+		
+		li {
+			list-style: none;
+		}
+		#left,#right{
+			float: left;
+		}
+		#left li,#right li{
+				height: 27px;
+				line-height: 27px;
+				background: url(images/lili.jpg) repeat-x;
+				border: 1px solid pink;
+				margin: -1px 0;
+                text-align: center;
+		}
+
+		#center{
+			float: left;
+		}
+		a{
+			text-decoration: none;
+            color: black;
+		}
+	</style>
+    <script src="../jQuery019精品展示案例/jquery-1.12.2.js"></script>
+    <script>
+        $(function (argument) {
+            $("#center>li:gt(0)").hide();
+            $("#left>li").mouseover(function(event) {
+                var i = $(this).index();
+                $(this).css("background","url(images/abg.gif)").siblings().css("background","url(images/lili.jpg)")
+                $("#center>li").eq(i).show().siblings().hide()
+                $("#right>li").css("background","url(images/lili.jpg)")
+            });
+
+            $("#right>li").mouseover(function(event) {
+                var i = $(this).index()+9;
+                $(this).css("background","url(images/abg.gif)").siblings().css("background","url(images/lili.jpg)")
+                $("#center>li").eq(i).show().siblings().hide()
+                $("#left>li").css("background","url(images/lili.jpg)")
+            });
+
+        })
+
+    </script>
+</head>
+<body>
+<div class="wrapper">
+    <ul id="left">
+        <li><a href="#">女靴</a></li>
+        <li><a href="#">雪地靴</a></li>
+        <li><a href="#">冬裙</a></li>
+        <li><a href="#">呢大衣</a></li>
+        <li><a href="#">毛衣</a></li>
+        <li><a href="#">棉服</a></li>
+        <li><a href="#">女裤</a></li>
+        <li><a href="#">羽绒服</a></li>
+        <li><a href="#">牛仔裤</a></li>
+    </ul>
+    <ul id="center">
+        <li><a href="#"><img src="images/女靴.jpg" width="200" height="250"/></a></li>
+        <li><a href="#"><img src="images/雪地靴.jpg" width="200" height="250"/></a></li>
+        <li><a href="#"><img src="images/冬裙.jpg" width="200" height="250"/></a></li>
+        <li><a href="#"><img src="images/呢大衣.jpg" width="200" height="250"/></a></li>
+        <li><a href="#"><img src="images/毛衣.jpg" width="200" height="250"/></a></li>
+        <li><a href="#"><img src="images/棉服.jpg" width="200" height="250"/></a></li>
+        <li><a href="#"><img src="images/女裤.jpg" width="200" height="250"/></a></li>
+        <li><a href="#"><img src="images/羽绒服.jpg" width="200" height="250"/></a></li>
+        <li><a href="#"><img src="images/牛仔裤.jpg" width="200" height="250"/></a></li>
+        <li><a href="#"><img src="images/女包.jpg" width="200" height="250"/></a></li>
+        <li><a href="#"><img src="images/男包.jpg" width="200" height="250"/></a></li>
+        <li><a href="#"><img src="images/登山鞋.jpg" width="200" height="250"/></a></li>
+        <li><a href="#"><img src="images/皮带.jpg" width="200" height="250"/></a></li>
+        <li><a href="#"><img src="images/围巾.jpg" width="200" height="250"/></a></li>
+        <li><a href="#"><img src="images/皮衣.jpg" width="200" height="250"/></a></li>
+        <li><a href="#"><img src="images/男毛衣.jpg" width="200" height="250"/></a></li>
+        <li><a href="#"><img src="images/男棉服.jpg" width="200" height="250"/></a></li>
+        <li><a href="#"><img src="images/男靴.jpg" width="200" height="250"/></a></li>
+    </ul>
+    <ul id="right">
+        <li><a href="#">女包</a></li>
+        <li><a href="#">男包</a></li>
+        <li><a href="#">登山鞋</a></li>
+        <li><a href="#">皮带</a></li>
+        <li><a href="#">围巾</a></li>
+        <li><a href="#">皮衣</a></li>
+        <li><a href="#">男毛衣</a></li>
+        <li><a href="#">男棉服</a></li>
+        <li><a href="#">男靴</a></li>
+    </ul>
+</div>
+</body>
+</html>

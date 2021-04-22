@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{padding: 0;margin: 0;}
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        img{
+            width: 80px;
+            height: 80px;
+        }
+        li{
+            list-style: none;
+        }
+        .wrap{
+            width: 600px;
+            height: 600px;
+            border: 1px solid gray;
+        }
+        .title{
+            height: 40px;
+            line-height: 40px;
+            background-color: #f5f5f5;
+            text-align: center;
+            position: relative;
+        }
+        .title>a{
+            position: absolute;
+            left: 0;
+            font-size: 50px;
+            color: gray;
+        }
+        .dcsj{
+            height: 50px;
+            line-height: 50px;
+            background-color: #f5f5f5;
+            font-size: 20px;
+        }
+        .dcsj>a{
+            margin-left: 50px;
+            color: gray;
+            padding-bottom: 9px;
+            
+        }
+
+        .dcsj>a:nth-child(1){
+            border-bottom: 2px solid #00ae66;
+            color: black;
+        }
+        .content{
+            height: 460px;
+        }
+        .leftMenu {
+            float: left;
+            width: 130px;
+            height: 100%;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+        .leftMenu li{
+            height: 50px;
+            line-height: 50px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+       /* .leftMenu li:nth-child(1){
+            background-color: white;
+            border-left: 2px solid #00ae66;
+            color: #00ae66;
+        }*/
+
+        .rightMenu{
+           float: left;
+           width: 470px;
+           height:100%;
+           overflow: scroll;
+        }
+        .rightMenu>div{
+            
+            /*height: 100px;*/
+            /*border-bottom: 1px solid #f5f5f5;*/
+            /*float: left;*/
+
+        }
+    
+        .rightMenu ul li{
+            position: relative;
+            height: auto;
+ /*           margin-bottom: 50px;*/
+            clear: both;
+            height:100px;
+            border-bottom: 1px solid #f5f5f5;
+        }
+        .rightMenu ul li div{
+            float: left;
+        }
+        .cp,.tp{
+            margin: 10px 10px;
+        }
+        .cp p{
+            margin-bottom: 8px;
+        }
+        .sl{
+            position: absolute;
+            right: 10px;bottom: 2px;
+        }
+        .sl>p{
+            float: left;
+            font-size: 20px;
+
+        }
+        .sl>p:nth-child(1),.sl>p:nth-child(3){
+            color: white;
+            cursor: pointer;
+            background-color: #00ae66;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            font-size: 25px;
+            border-radius: 20px;
+            margin: 0 10px;
+            text-align: center;
+        }
+        .yx{
+            color: gray;
+        }
+        .jg{
+            color: red;
+            font-weight: 600;
+        }
+        .footer{
+            position: relative;
+            height: 50px;
+        }
+        .footer div{
+           float: left;
+        }
+        .gwc{
+            position: relative;
+        }
+        .gwc>img{
+            width: 50px;
+            height: 50px;
+        }
+        .conjs{
+            position: absolute;
+            right: 0;
+            color: white;
+            width: 200px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            background-color: gray;
+        }
+        .jsl{
+            position: absolute;
+            text-align: center;
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50px;
+            font-size: 12px;
+            background-color: #000;
+            top: 0;
+            right: 0;
+        }
+        
+        .hot{
+             background-color: white;
+            border-left: 2px solid #00ae66;
+            color: #00ae66;
+        }
+    </style>
+    <script src="jquery-1.5.1.js"></script>
+    <script>
+        $(function (argument) {
+             var num = 0;
+             var cco = 0;
+             $(".leftMenu>li:eq(0)").addClass('hot');
+             $(".sl p:nth-child(1),.sl p:nth-child(2)").hide();
+             $(".leftMenu>li").click(function(event) {
+                var $a=$(this).index()
+                $(this).addClass('hot').siblings('').removeClass('hot')
+                $(".rightMenu>ul").eq($a).show().siblings().hide();
+                 
+             });
+
+             $(".sl p:nth-child(3)").click(function(event) {
+                $(this).prev().show().end().prev().prev().show();
+                  num++;
+                  var tnum = parseInt($(this).prev().html());
+                  var count = parseInt($(this).parent().prev().children().eq(2).html().slice(1))
+                  
+                  tnum++;
+                  cco+=count
+                  $("#cn").html(cco)
+                  $(this).prev('p').html(tnum);
+                  $(".jsl").html(num);
+                if (num!=0) {
+                    $(".conjs").css({
+                        background : '#00ae66',
+                        cursor : 'pointer'
+                    });
+                }
+
+             });
+
+
+             $(".sl p:nth-child(1)").click(function(event) {
+                  var tnum = $(this).next().html();
+                  var count = parseInt($(this).parent().prev().children().eq(2).html().slice(1))
+                  if(tnum<=1){
+                    $(this).next().hide();
+                    $(this).hide();
+                    }
+
+                    num--;
+                    tnum--;
+                    cco-=count
+                  
+                  $("#cn").html(cco)
+                  $(this).next('p').html(tnum);
+                  $(".jsl").html(num);
+                if (num==0) {
+                    $(".conjs").css({
+                        background : 'gray',
+                        cursor : 'auto'
+                    });
+                }
+             });
+
+            $(".conjs").click(function(event) {
+                if (num!=0) {
+                    alert("您共点了"+num+"件菜品，总价为"+cco+"元，谢谢惠顾！")
+                }
+            });
+            
+
+        })
+
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="title">
+            <a href="#">‹</a>
+            <h2>商品</h2>
+        </div>
+        <div class="dcsj">
+            <a href="#">点菜</a>
+            <a href="#">商家</a>
+        </div>
+        <div class="content">
+            <ul class="leftMenu">
+                <li>营养套餐</li>
+                <li>实惠炒菜</li>
+            </ul>
+            <div class="rightMenu">
+                <ul >
+                    <li >
+                        <div class="tp"><img src="素材/chc.jpg" alt=""></div>
+                        <div class="cp">
+                            <p>炒花菜</p>
+                            <p class="yx">月售量:123</p>
+                            <p class="jg">￥2.00</p>
+                        </div>
+                        <div class="sl"> 
+                            <p>-</p>
+                            <p>0</p>
+                            <p>+</p>
+                        </div>     
+                    </li>
+                    <li >
+                        <div class="tp"><img src="素材/hsyz.jpg" alt=""></div>
+                        <div class="cp">
+                            <p >红烧鸭子</p>
+                            <p class="yx">月售量：123</p>
+                            <p class="jg">￥3.00</p>
+                        </div>
+                        <div class="sl">
+                            <p>-</p>
+                            <p>0</p>
+                            <p>+</p>
+                        </div>      
+                    </li>
+                    <li >
+                        <div class="tp"><img src="素材/dsrp.jpg" alt=""></div>
+                        <div class="cp">
+                            <p >豆烧肉皮</p>
+                            <p class="yx">月售量：123</p>
+                            <p class="jg">￥6.00</p>
+                        </div>
+                        <div class="sl">
+                            <p>-</p>
+                            <p>0</p>
+                            <p>+</p>
+                        </div>      
+                    </li>
+                    <li >
+                        <div class="tp"><img src="素材/mmq.jpg" alt=""></div>
+                        <div class="cp">
+                            <p >妈妈亲</p>
+                            <p class="yx">月售量：123</p>
+                            <p class="jg">￥10.00</p>
+                        </div>
+                        <div class="sl">
+                            <p>-</p>
+                            <p>0</p>
+                            <p>+</p>
+                        </div>      
+                    </li>
+                   
+                </ul>
+                <ul style="display: none">
+                    <li >
+                        <div class="tp"><img src="素材/lfc.jpg" alt=""></div>
+                        <div class="cp">
+                            <p>芦笋粉</p>
+                            <p class="yx">月售量:123</p>
+                            <p class="jg">￥2.00</p>
+                        </div>
+                        <div class="sl"> 
+                            <p>-</p>
+                            <p>0</p>
+                            <p>+</p>
+                        </div>     
+                    </li>
+                    <li >
+                        <div class="tp"><img src="素材/yp.jpg" alt=""></div>
+                        <div class="cp">
+                            <p >鸡柳</p>
+                            <p class="yx">月售量：123</p>
+                            <p class="jg">￥3.00</p>
+                        </div>
+                        <div class="sl">
+                            <p>-</p>
+                            <p>0</p>
+                            <p>+</p>
+                        </div>      
+                    </li>
+                    <li >
+                        <div class="tp"><img src="素材/xjdmg.jpg" alt=""></div>
+                        <div class="cp">
+                            <p >小鸡炖蘑菇</p>
+                            <p class="yx">月售量：123</p>
+                            <p class="jg">￥5.00</p>
+                        </div>
+                        <div class="sl">
+                            <p>-</p>
+                            <p>0</p>
+                            <p>+</p>
+                        </div>      
+                    </li>
+
+                </ul>          
+            </div>
+        </div>
+        <div class="footer">
+            <div class="gwc"><img src="素材/gwc.png" alt="">
+            <p class="jsl">0</p>
+            </div>
+            <div style="height:50px;line-height: 50px;margin-left: 10px;">总计： <p id="cn" style="display: inline-block;color: red;">0</p> 元</div>
+            <div class="conjs">去结算</div>
+        </div>
+    </div>
+</body>
+</html>

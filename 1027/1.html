@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<ul class="persion">
+    <li title="我要造人">下面都是我的人</li> 
+</ul>
+<input type="button" class="btn" value="消！">
+<script type="text/javascript">
+    var father = document.getElementsByClassName("persion")[0];
+    var btn=document.getElementsByClassName('btn')[0]
+    for(var i=0;i<100;i++){
+    var son1=document.createElement('li')
+    son1.innerHTML="我是人"+i;
+    son1.title="I m man!"+i;
+    father.append(son1);
+}
+    btn.onclick=function(){
+       // father.remove();
+        //alert(father.children.length-2);
+        //father.children[father.children.length-1].remove();
+        alert(father.length);
+        //father.children.length=0;
+        //father.length=0;
+    }
+</script>
+    </body>
+</html>

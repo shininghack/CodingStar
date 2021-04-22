@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jquery超漂亮星级评分</title>
+<script type="text/javascript" src="jquery-1.6.2.min.js"></script>
+<style>
+.user_rate {font-size:14px; position:relative; padding:10px 0;}
+.user_rate p {margin:0; padding:0; display:inline; height:40px; overflow:hidden; position:absolute; top:0; left:100px; margin-left:140px;}
+.user_rate p span.s {font-size:36px; line-height:36px; float:left; font-weight:bold; color:#DD5400;}
+.user_rate p span.g {font-size:22px; display:block; float:left; color:#DD5400;}
+.big_rate_bak {width:140px; height:28px; text-align:left; position:absolute; top:3px; left:85px; display:inline-block; background:url(http://files.jb51.net/file_images/article/201508/201586174000242.gif) left bottom repeat-x;}
+.big_rate_bak b {display:inline-block; width:24px; height:28px; position:relative; z-index:1000; cursor:pointer; overflow:hidden;}
+.big_rate_up {width:140px; height:28px; position:absolute; top:0; left:0; background:url(http://files.jb51.net/file_images/article/201508/201586174000242.gif) left top;}
+</style>
+</head>
+<body>
+<div class="user_rate">
+ <div class="big_rate_bak">
+  <b rate="2" onclick="javascript:up_rate(20);"> </b>
+  <b rate="4" onclick="javascript:up_rate(40);"> </b>
+  <b rate="6" onclick="javascript:up_rate(60);"> </b>
+  <b rate="8" onclick="javascript:up_rate(80);"> </b>
+  <b rate="10" onclick="javascript:up_rate(100);"> </b>
+  <div style="width:45px;" class="big_rate_up"></div>
+ </div>
+ <p><span id="s" class="s"></span><span id="g" class="g"></span></p>
+</div>
+<br><br>如果运行错误请刷新页面即可~
+</body>
+<script type="text/javascript">
+$(function(){
+  get_rate(88);
+})
+function get_rate(rate){
+  rate=rate.toString();
+  var s;
+  var g;
+  $("#g").show();
+  if (rate.length>=3){
+    s=10; 
+    g=0;
+    $("#g").hide();
+  }else if(rate=="0"){
+    s=0;
+    g=0;
+  }else{
+    s=rate.substr(0,1);
+    g=rate.substr(1,1);
+  }
+  $("#s").text(s);
+  $("#g").text("."+ g);
+  $(".big_rate_up").animate({width:(parseInt(s)+parseInt(g)/10) * 14,height:26},1000);
+  $(".big_rate_bak b").each(function(){
+    $(this).mouseover(function(){
+      $(".big_rate_up").width($(this).attr("rate") * 14 );
+      $("#s").text($(this).attr("rate"));
+      $("#g").text("");
+    }).click(function(){
+      $("#f").text($(this).attr("rate"));
+      $("#my_rate").show();
+    })
+  })
+  $(".big_rate_bak").mouseout(function(){
+    $("#s").text(s);
+    $("#g").text("."+ g);
+    $(".big_rate_up").width((parseInt(s)+parseInt(g)/10) * 14);
+  })
+}
+function up_rate(rate){
+  $(".big_rate_up").width("0");
+  get_rate(rate);
+}
+</script>
+</html>

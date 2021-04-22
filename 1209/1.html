@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    用户名：<input type="text" class="yhm"><span></span><br>
+密码：<input type="password" class="mm"><span></span>
+</body>
+
+<script>
+    var re=/^\d{6}$/
+    var a="320201"
+    console.log(re.test(a));
+
+    var re2=/^abc$/i;  //i表示不区分大小写，g表示全局搜索
+    console.log(re2.test("aBc"));
+
+    var yhm=document.getElementsByClassName("yhm")[0];
+    var mm = document.getElementsByClassName("mm")[0];
+    yhm.onblur=function(){
+        var reg = /^[a-zA-Z]\w{3,19}$/
+        var sp=this.nextSibling   //表示该元素的下一个兄弟元素
+        if (!reg.test(this.value)) {
+            sp.innerHTML="用户名格式错误！" // 
+            sp.style.color="red";
+        }else{
+            sp.innerHTML="√" // 
+            sp.style.color="green";
+        }
+    }
+     mm.onblur=function(){
+        var reg = /^.{8,20}$/
+        var sp=this.nextSibling   //表示该元素的下一个兄弟元素
+        if (!reg.test(this.value)) {
+            sp.innerHTML="用户名格式错误！" // 
+            sp.style.color="red";
+        }else{
+            sp.innerHTML="√" // 
+            sp.style.color="green";
+        }
+    }
+</script>
+</html>

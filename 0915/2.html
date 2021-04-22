@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    /*var a=10;
+    var c=a>5?"大于":"小于";
+    console.log(c);
+    console.log(103%5);*/
+    //输入一个年份，判断此年是否为闰年。除以4余数为0且除以100余数不为0，或者除以400余数为0
+    //情况1：除以4余数为0且除以100余数不为0
+    //情况2：除以400余数为0
+    var a= parseFloat(prompt("测试一个数"));
+    b = parseInt(a/2);
+    var pd=0;
+        for(i=2; i <= b; i++){
+            if (a%i==0) {
+                pd=1;
+                break;
+            }
+        }
+        if (pd==1) {
+            alert("合数");// statement
+        }else {
+              alert("质数"); 
+        }
+     
+   /*if ((date%4==0 && date % 100 !=0) || (date %400 ==0)){
+    console.log("yes");
+   }else {
+       console.log("nonono")
+   }*/
+
+</script>

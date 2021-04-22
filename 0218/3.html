@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script type="text/javascript">
+    function jc(a){
+        var p=1;
+        for (var i=1;i<=a;i++){
+            p=p*i;
+    }
+    return p;
+}
+    function lj(x){
+        var j=0;
+        for (var i=1;i<=x;i++){
+            j=j+jc(i);
+        }
+        return j;
+    }
+    var x=parseInt(prompt("请输入一个数："));
+        alert("阶乘累加结果是："+lj(x));
+
+
+
+</script>

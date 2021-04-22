@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        .menu{
+            list-style: none;
+            width: 240px;
+            height: 40px;
+        }
+        .menu li{
+            float: left;
+            width: 20%;
+            border: 1px solid orange;
+            height: 100%;
+            line-height: 40px;
+            text-align: center;
+            margin-right: 10px;
+            cursor: crosshair;
+        }
+        .divshow{
+            clear:both;
+            width: 240px;
+            height: 200px;
+            background-color: #ccc
+        }
+        .hot{
+            background-color: yellow;
+        }
+    </style>
+    <script src="../jquery-3.5.1/jquery-3.5.1.js"></script>
+    <script>
+        $(function (argument) {
+           $(".divshow>div:gt(0)").hide(); 
+           $(".menu>li").mouseover(function(event) {
+                var i=$(this).index(); //index()可以获取当前点击元素的索引
+                $(this).addClass('hot').siblings('li').removeClass('hot')
+              $(".divshow>div").eq(i).show().siblings().hide();
+              //同等于：$(".divshow>div:eq("+i+")").show().siblings().hide();
+                
+           }); 
+        });
+
+    </script>
+</head>
+<body>
+    <ul class="menu">
+        <li class="hot">鞋子</li>
+        <li>帽子</li>
+        <li>裤子</li>
+        <li>褂子</li>
+    </ul>
+    <div class="divshow">
+        <div>鞋子阿萨是的发送到发送到阿斯蒂芬</div>
+        <div>帽子阿斯加德风口浪尖隔离开关绝对是恐惧菲欧是哈</div>
+        <div>裤子*10</div>
+        <div>褂子*10</div>
+    </div>
+</body>
+</html>

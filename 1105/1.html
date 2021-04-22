@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div>0</div>
+    <input type="button" value="开始">&nbsp<input type="button" value="停止">
+    <script>
+        var div = document.getElementsByTagName("div")[0];
+        var btn1=document.getElementsByTagName("input")[0]
+        var btn2=document.getElementsByTagName("input")[1];
+        var tim;
+        btn1.onclick=function(){
+            //在setinterval前面先加CLEAR目的是防止计时器累加造成的时间错乱导致无法停止的BUG。
+            clearInterval(tim);
+            tim=setInterval(function(){
+                div.innerHTML=parseInt(div.innerHTML)+1;
+            },1000)
+        }
+        btn2.onclick=function(){
+            clearInterval(tim);
+        }
+    </script>
+</body>
+</html>

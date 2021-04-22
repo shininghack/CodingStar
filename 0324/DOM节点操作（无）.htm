@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../jquery-1.7.2.js"></script>
+    <script>
+        $(function  (argument) {
+            // 查找节点
+            // 1. 利用选择器+部分层次的函数（next,siblings,parent）
+            // Attr()引用属性
+            // a)a.attr("id") 获取id属性的值
+            // b)a.attr("id","xxx") 设置id属性的值
+            
+            //插入节点
+            //1.设置变量$s="HTML代码" 可以包括属性、事件等
+            //2.$(父节点).append($s) 或者$s.appendTo(父节点)
+            
+            //删除节点
+            // 1.remove(),这里的删除节点并不是隐藏，而是真正的去除了DOM元素。删除后的节点可以用变量保存，再添加到任何位置。如果删除了的节点事先注册了事件（函数），那么重新添加后事件将消失。删除时不推荐使用索引定位，推荐使用更精确的方式，如:contains("")
+            // 2.detach()作用和remove几乎一样，唯一不同的是，如果删除了的节点事先注册了事件（函数），那么重新添加后事件将依然保留。
+            // 3.empty()不是删除，是清空文本。
+            
+            //复制节点
+            //1.clone(),只复制内容和属性，不复制事件注册的函数。
+            //clone(true),复制内容和属性，也复制事件注册的函数。
+            $("ul li").click(function(event) {
+              alert($(this).html())  /* Act on the event */
+            });
+
+            $(":button:eq(0)").click(function(event) {
+                // $li="<li>西瓜</li><li>南瓜</li>";
+                $li="<li title='watermelon'>西瓜</li><li title='south gua'>南瓜</li>";
+                $("ul").append($li);
+                //$("ul").prepend($li); 在前面插入
+            });
+
+            $(":button:eq(5)").click(function(event) {
+               // var $s=$("ul li:eq(1)").remove();
+                var $s=$("ul li:eq(1)").detach(); //推荐用！
+                $("ul").append($s);  
+            });
+
+            $(":button:eq(8)").click(function(event) {
+                var $s=$("ul li:eq(1)").empty(); 
+            });
+
+            $("ul li").click(function(event) {
+                $(this).clone(true).appendTo('ul') 
+            });
+        })
+    </script>
+</head>
+
+
+<body>
+<h2>插入节点</h2>
+    <input type="button" value="插入节点两个<li>节点，分别为西瓜和南瓜"/>
+	<input type="button" value="注意区别append和appendTo"/>
+	<input type="button" value="注意区别append和prepend"/>
+	<input type="button" value="使用after在匹配的元素后插入"/>
+	<input type="button" value="使用before在匹配的元素前面插入"/>
+
+<h2>删除节点</h2>
+    <input type="button" value="remove删除节点"/>
+	<input type="button" value="remove删除节点重新加入"/>
+	<input type="button" value="detach vs remove"/>
+    <input type="button" value="empty清空节点"/>
+
+<h2>复制节点</h2>
+    <input type="button" value="复制第一个节点到ul"/>
+	<input type="button" value="复制第一个节点到ul,包含所有行为"/>
+
+<h2>替换节点</h2>
+    <input type="button" value="replaceWith替换第一个节点为冬瓜"/>
+
+<h2>包裹节点</h2>
+    <input type="button" value="wrap用100*100的红色背景div包裹ul"/>
+    <input type="button" value="注意区别wrapAll,集中包裹input"/>
+    <input type="button" value="注意区别wrapInner,包裹子元素，内部包裹<a>"/>
+
+	<p title="选择你最喜欢的水果" ><strong>你最喜欢的水果是?</strong></p>
+	<ul>
+	  <li title='苹果'>苹果</li>
+	  <li title='橘子'>橘子</li>
+	  <li title='菠萝'>菠萝</li>
+	</ul>
+
+</body>
+</html>

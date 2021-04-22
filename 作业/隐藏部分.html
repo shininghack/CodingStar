@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var ip = prompt("请输入一个ip");
+        var result = ip.substr(0,ip.indexOf(".")+1)+"*.*"+ip.substr(ip.lastIndexOf("."))
+
+        alert(result)
+
+    </script>
+</body>
+</html>

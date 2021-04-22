@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        h2{
+            width: 200px;
+            height: 40px;
+            line-height: 40px;
+            background-color: gray;}
+        p {
+            width: 198px;
+            height: 200px;
+            border: 1px solid #ccc;
+        }
+        .menu {
+            position: absolute;
+            width: 200px;
+            /*height: 200px;*/
+            border: 1px solid gray;
+            box-shadow: 5px 5px 3px gray;
+        }
+        ul{
+            list-style: none;
+            
+        }
+        ul li {
+            padding-left: 10px;
+        }
+        ul li:hover{
+            cursor:pointer;
+            background-color: #ccc;
+        }
+    </style>
+    <script src="../jquery-1.5.1.js"></script>
+    <script>
+           //bind 事件绑定
+        $(function (argument) {
+            // $("h2").click(function(event) {
+            //    $(this).next().toggle(100)  /* Act on the event */
+            // });
+            $("h2").bind('click',function(e){
+                $(this).next().toggle(100);
+                console.log(e.type) 
+                console.log(event.target); //等于console.log(this)
+                //event.preventDefault() event.stopPropagation()
+            })
+            // $("p").beforecopy(function (argument) {
+            //     alert(123)
+            // })
+            // var p = document.getElementsByTagName("p")[0];
+            // p.onbeforecopy=function (argument) {
+            //     alert(123);
+            // }
+            // $("body").click(function(e) {
+            //     console.log(e.pageX+" "+e.pageY);
+            // });
+            // function stop(){
+            //     return false;
+            // }
+            document.oncontextmenu = function(){
+                return false;
+            }
+            $(".menu").hide()
+            $(window).mousedown(function(e) {
+                if(e.which==3){
+                    $(".menu").show().css({
+                        left: e.pageX,
+                        top: e.pageY
+                    })
+                }
+
+            });
+            $("body").mousedown(function(e) {
+                if(e.which==1){
+                    $(".menu").hide();
+                }
+            });
+
+        })
+    </script>
+</head>
+<body>
+    <!-- <h2>我是标题</h2>
+    <p>我是正文我是正文我是正文我是正文我是正文我是正文我是正文我是正文我是正文我是正文我是正文我是正文我是正文我是正文我是正文我是正文我是正文我是正文我是正文我是正文我是正文我是正文我是正文我是正文我是正文我是正文我是正文我是正文</p> -->
+    <div class="menu">
+        <ul>
+            <li>复制</li>
+            <li>粘贴</li>
+            <li>剪切</li>
+        </ul>
+        <hr>
+        <ul>
+            <li>选项</li>
+            <li>任务</li>
+            <li>关于</li>
+        </ul>
+        <hr>
+        <ul>
+            <li>教程</li>
+            <li>翻译</li>
+            <li>属性</li>
+        </ul>
+    </div>
+</body>
+</html>

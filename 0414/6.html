@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        h2{
+            width: 200px;
+            height: 40px;
+            line-height: 40px;
+            background-color: gray;}
+        p{width: 198px;height: 250px;border: 1px solid black;}
+    </style>
+    <script src="../jquery-1.7.2.js"></script>
+    <script>
+        $(function (argument) {
+            //所有系统动画可以使用两种参数
+            //1.数字 单位毫秒，比如toggle(1000)，就是动画执行时间为1秒
+            //2.英文 fast normal slow,分别对应200,400,600ms不能省略引号，比如toggle("fast")
+    
+        $("h2").click(function(event) {
+            //$(this).next().toggle("fast");  速度为固定值 //slideToggle() fadeToggle()用来代替fadeIn和fadeOut
+            if($(this).next().is(":hidden")){
+                $(this).next().fadeIn(2000);
+            }else {
+                $(this).next().fadeOut(100);
+            }
+        });
+})
+    </script>
+</head>
+<body>
+    <h2>我是标题</h2>
+    <p>我是人我是人我是人我是人我是人我是人我是人我是人我是人我是人我是人我是人我是人我是人我是人我是人我是人我是人我是人我是人我是人我是人我是人我是人我是人我是人我是人我是人我是人我是人我是人我是人我是人我是人我是人我是人我是人我是人我是人我是人</p>
+</body>
+</html>

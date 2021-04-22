@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {margin: 0;padding: 0;}
+        .d1{width: 1212px;margin: 0 auto;position:relative;left: -5px}
+        .d1 .gwc{position: absolute;left:745px;top: 528px; 
+        }
+        .d2{width: 1212px;margin: 0 auto;}
+        .d3{width: 1212px;margin: 0 auto;}
+    </style>
+</head>
+<body>
+    <div class="d1"><img src="../1203/效果2素材/top.jpg" alt=""><div class="gwc"><img src="../1203/效果2素材/gwc.jpg" alt=""></div></div>
+    <div class="d2"><img src="../1203/效果2素材/nav.jpg" alt=""></div>
+    <div class="d3"><img src="../1203/效果2素材/content.jpg" alt=""></div>
+    <script>
+        var d1 = document.getElementsByClassName("d1")[0];
+        var d2 = document.getElementsByClassName("d2")[0];
+        var gwc = document.getElementsByClassName("gwc")[0];
+        var d3 = document.getElementsByClassName("d3")[0]
+        function test(){
+            var ss = document.documentElement.scrollTop||document.body.scrollTop;
+            var d1H=d1.offsetHeight;
+            console.log(ss+"    "+d1H);
+            if (ss>=d1H){
+                d2.style.cssText="position:fixed;top:0;left:"+d3.offsetLeft+"px";
+                gwc.style.cssText="position:fixed;top:0;left:"+(d2.offsetLeft+d2.children[0].offsetWidth+5)+"px";
+                gwc.children[0].style.height=d2.children[0].offsetHeight+"px";
+            }else{
+                d2.style.cssText="position:none;top:;left:;"
+                gwc.style.cssText="position:absolute;top:;left:;"
+                gwc.children[0].style.height="";
+            }
+        }
+        window.onscroll=function(){
+            test();
+        }
+        window.onresize=function(){
+            test();
+        }
+    </script>
+</body>
+</html>

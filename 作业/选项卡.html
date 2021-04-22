@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .pink{
+            background-color: pink;
+            color : white;
+        }
+        a{
+            text-decoration: none;
+            border-bottom: 2px solid gray;
+            color: #ccc;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div>
+        <a href="#" class="pink">选项一</a>
+        <a href="#">选项二</a>
+        <a href="#">选项三</a>
+        <a href="#">选项四</a>
+        <div class="op" style="display: block;" >
+            <div>1.选项一xxx</div>
+            <div>2.选项一xxx</div>
+            <div>3.选项一xxx</div>
+        </div>
+        <div class="op" style="display: none;">
+            <div>1.选项二xxx</div>
+            <div>2.选项二xxx</div>
+            <div>3.选项二 xxx</div>
+        </div>
+        <div class="op" style="display: none">
+            <div>1.选项三xxx</div>
+            <div>2.选项三xxx</div>
+            <div>3.选项三xxx</div>
+        </div>
+    </div>
+    <script>
+        var op = document.getElementsByClassName('op');
+        var a = document.getElementsByTagName('a');
+        var js = 0;
+        var js1 = 0;
+        var speed = 0;
+        var tim = null;
+        //var js1 = 255;
+        for (let i=0;i<a.length;i++) {
+            a[i].onmouseover=function(){
+                for (let j=0;j<op.length;j++){
+                    op[j].style.display = 'none';
+                    a[j].className -= "pink";
+                    //js=255;
+                    //start(20,2);
+                }
+                //this.className = "pink"
+                op[i].style.display = '';
+                //js=0;
+                //js1=255;
+                //start(255,i);
+
+            }
+        }
+         a[2].onmouseover=function(){
+            start(255,2)
+            a[3].onmouseover=function(){
+                start(20,3)
+            }
+            //setTimeout("start(20,3)",1000)
+            //start(20,3)
+         }
+
+        a[3].onmouseover=function(){
+            start(20,2)
+            a[2].onmouseover=function(){
+                start(255,3)
+            }
+            //setTimeout("start(255,3)",1000)
+        }
+        function start(sp,xb){
+            clearInterval(tim);
+           // alert(sp)
+            var a = document.getElementsByTagName('a');
+            tim = setInterval(function(){
+                if(js<sp){
+                    speed=5;
+
+                }else if(js>sp){
+                   // alert(js)
+                    speed=-5;
+                }
+                if(js==sp){
+                    clearInterval(tim);
+                }else {
+                    // alert(js)
+                    js += speed;
+                    js1 -= speed;
+                    //alert(js);
+                    a[0].style.backgroundColor = 'rgb('+js1+',255,255)'
+                    a[1].style.backgroundColor = 'rgb('+js1+',255,255)'
+                    //a[2].style.backgroundColor = 'rgb('+js1+',255,255)'
+                    a[xb].style.backgroundColor = 'rgb('+js+',255,255)'
+                }
+            },20)
+        }
+        
+    </script>
+</body>
+</html>

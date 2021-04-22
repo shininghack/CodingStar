@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{padding: 0;margin: 0;}
+        ul{list-style: none;}
+        img{height: 50px;width: 50px;}
+        ul li{
+            float: left;
+        }
+    </style>
+    <script src="../jquery-1.5.1.js"></script>
+    <script>
+        $(function (argument) {
+             $("ul li img").hover(function(event) {
+                if(!$(this).hasClass('js')){
+                 $(this).attr('src','star2.png').parent().prevAll().children('img').attr('src','star2.png')
+                 $(this).parent().nextAll().children('img').attr('src','star1.png')
+             }
+             },function(){
+                if(!$(this).hasClass('js')){
+                     $("ul li img").attr('src','star1.png');
+                }
+                
+
+             });
+             // $("ul li img").mouseout(function(event) {
+             //     $("ul li img").attr('src','star1.png');
+             // });
+             $("ul li img").click(function(event) {
+                if($(this).hasClass('js')){
+                    alert("您已打分，谢谢！")
+                }else{
+                 $("ul li img").addClass('js');
+                 $(this).attr('src','star2.png').parent().prevAll().children('img').attr('src','star2.png')
+                 $("h2").html("打分成功，您的评价是："+($(this).parent().index()+1)+"分")
+                }
+             });
+        })
+    </script>
+</head>
+<body>
+    <ul>
+        <li><img src="star1.png" alt=""></li>
+        <li><img src="star1.png" alt=""></li>
+        <li><img src="star1.png" alt=""></li>
+        <li><img src="star1.png" alt=""></li>
+        <li><img src="star1.png" alt=""></li>
+    </ul>
+    <h2 style="clear: both;">请打分！</h2>
+</body>
+</html>

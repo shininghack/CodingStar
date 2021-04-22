@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    var a=parseInt(prompt("请输你要输入的个数。"));
+    var arr=new Array(a);
+    var m=1;
+    for (var i=0;i<a;i++){
+        arr[i]=parseInt(prompt("请输入第"+(i+1)+"个值"));
+    }
+    var r=arr[0];
+    var ri=arr[0];
+    for (var j=1;j<arr.length;j++){
+        if(r<arr[j]){
+            r=arr[j];
+            m=j+1;
+        }
+
+    }
+    alert(r+"第"+m+"个");
+
+
+
+
+
+</script>

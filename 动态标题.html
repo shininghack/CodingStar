@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title >欢迎来到星落辰枫的艺术天堂~</title>
+    <style>
+        /*body{
+            position: absolute;
+            width: 1000px;
+        }*/
+
+        input{
+            position: relative;
+            left: 51%;
+        }
+        .container{
+            position: absolute;
+            left: 480px;
+            top: 150px;
+        }
+    #ll{
+        color: pink;
+        font-weight: 600;
+        font-size: 50px;
+        position: relative;
+        left: 45%;
+    }
+    .nr{
+        width: 800px;
+        position: relative;
+        left: 12%
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1 id="ll">浏览协议</h1>  <br>
+<div class="nr">
+
+【信息内容规范】 <br>
+
+1. 本条所述信息内容是指用户浏览本网站及服务过程中所制作、复制、发布、传播的任何内容。<br>
+
+2. 您理解并同意，本站一直致力于为用户提供文明健康、规范有序的网络环境，您不得利用本站帐号及服务制作、复制、发布、传播如下干扰本站正常运营，以及侵犯其他用户或第三方合法权益的内容，包括但不限于：<br>
+
+3. 发布、传送、传播、储存违反国家法律、危害国家安全统一、社会稳定、公序良俗、社会公德以及侮辱、诽谤、淫秽或含有任何性或性暗示的、暴力的内容；<br>
+
+4. 发布、传送、传播、储存侵害他人名誉权、肖像权、知识产权、商业秘密等合法权利的内容；<br>
+
+5. 涉及他人隐私、个人信息或资料的；<br>
+
+6. 发表、传送、传播骚扰、广告信息及垃圾信息；<br>
+
+7. 其他违反法律法规、政策及公序良俗、社会公德或干扰本站正常运营和侵犯其他用户或第三方合法权益内容的信息。<br>
+</div> <br>
+<input type="button" value="同意协议还剩10秒" disabled="true" onclick="window.location.href='简单漂浮.html'"/>
+</div>
+<script>
+    var ty = document.getElementsByTagName("input")[0];
+    var tim=10;
+    re=setInterval(function(){
+       
+        tim=tim-1;
+        ty.value="同意协议还剩"+tim+"秒"
+        
+        if(tim==0){
+            ty.value="我同意该协议"
+            ty.disabled="";
+            clearInterval(re);
+        }
+    },1000);
+
+    ttt=setInterval(function(){
+        var a = document.title;
+        /*for(i=0;i<a.length;i++){
+            a[i].color = '
+        }*/
+        rea=a.substr(1)
+        document.title=rea+a[0];
+    },50)
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        img{
+          width: 200px;
+          height: 280px;
+        }
+        div {
+          width: 200px;
+          height: 360px;
+          float: left;
+          text-align: center;
+          line-height: 21px;
+          background-color: #ccc;
+          margin-right: 10px;        }
+    </style>
+    <script src="../jquery-3.5.1/jquery-3.5.1.js"></script>
+    <script>
+        $(function (argument) {
+          $("div").mouseenter(function(e) {
+            $(this).clone().attr("id","hello").css({position:"absolute",left:e.pageX,top:e.pageY,opacity:"0.5"}).appendTo($("body"));
+          }).mouseleave(function(event) {
+            $("#hello").remove();
+          }).mousemove(function(e) {
+             $("#hello").css({left:e.pageX+10+"px",top:e.pageY+10+"px",opacity:"0.5"});
+          });;;
+        });
+
+    </script>
+</head>
+<body>
+    <div>
+      <img src="a.jpg" alt="">
+      <span>短袖衬衫</span>
+      <h4>价格：100</h4>
+      <a href="#">选择</a>
+    </div>
+    <div>
+      <img src="a.jpg" alt="">
+      <span>短袖衬衫</span>
+      <h4>价格：200</h4>
+      <a href="#">选择</a>
+    </div>
+    <div>
+      <img src="a.jpg" alt="">
+      <span>短袖衬衫</span>
+      <h4>价格：300</h4>
+      <a href="#">选择</a>
+    </div>
+    <div>
+      <img src="a.jpg" alt="">
+      <span>短袖衬衫</span>
+      <h4>价格：400</h4>
+      <a href="#">选择</a>
+    </div>
+
+</body>
+</html>

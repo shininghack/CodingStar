@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        div{
+            width: 500px;
+            height: 500px;
+            border: 1px solid red;
+            overflow: hidden;
+        }
+        div img{
+            transform: scaleZ(8); /*scale(0) rotate(360deg)*/
+            transform: translateY(5px) rotate(130deg) rotateY(180deg) rotateX(100deg) scale(0.5,0.5);
+           /* transition: all 0.5s; */
+        }
+    </style>
+    <script src="../jquery-1.7.2.js"></script>
+    <script>
+        $(function (argument) {
+            $("div img").hover(function() {
+                $(this).css({
+                    transform: 'translateY(-5px) rotate(0deg) rotateY(0deg) rotateX(0deg) scale(1,1)',
+                    transition: 'all 0.5s'
+                });
+            }, function() {
+               $(this).css({
+                    transform: 'translateY(5px) rotate(130deg) rotateY(180deg) rotateX(100deg) scale(0.5,0.5)',
+                    transition: 'all 0.5s'
+                });
+            });
+        })
+    </script>
+</head>
+<body>
+    <div><img src="../images/Koala.jpg" alt="" width="200px" height="300px"></div>
+</body>
+</html>

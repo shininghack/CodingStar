@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{padding: 0;margin: 0;}
+        body{
+            background-color: #dce775;
+        }
+        .title{
+            /*position: absolute;*/
+            margin: 80px auto;
+            width: 500px;
+            height: 300px;
+            line-height: 300px;
+            text-align: center;
+            font-size: 80px;
+            color: white;
+            border-top: 3px solid white;
+            border-bottom: 3px solid white;
+        }
+        .menu {
+            position: fixed;
+            width: 200px;
+            /*border: 1px solid gray;*/
+            box-shadow: 0px 0px 80px gray;
+            background-color: white;
+            color: #bfc5d1;
+            border-radius: 5px;
+        }
+        ul{
+            list-style: none;  
+        }
+        ul li {
+            padding-left: 10px;
+        }
+        ul li:hover{
+            background-color: #ce93d8;
+            color: white;
+            border-left: 2px solid #9c27b0;
+	    cursor:pointer;
+        }
+    </style>
+    <script src="jquery-1.5.1.js"></script>
+    <script>
+        $(function  (argument) {
+            $(".menu").hide();
+             document.oncontextmenu=function (argument) {
+                 return false;
+             }
+
+             $(window).mousedown(function(e) {
+                 if (e.which==3) {
+                     $(".menu").show().css({
+                         left: e.pageX,
+                         top: e.pageY
+                     });
+                 }else if(e.which==1){
+                    $(".menu").hide();
+                 }
+             });
+        })
+    </script>
+</head>
+<body>
+<div class="title">
+    鼠标右键点击
+</div>
+<div class="menu">
+    <ul>
+        <li>复制</li>
+        <li>粘贴</li>
+        <li>剪切</li>
+    </ul>
+    <hr>
+    <ul>
+        <li>选项</li>
+        <li>任务</li>
+        <li>关于</li>
+    </ul>
+    <hr>
+    <ul>
+        <li>教程</li>
+        <li>翻译</li>
+        <li>属性</li>
+    </ul>
+</div>
+</body>
+</html>
+
+
+
+    
+

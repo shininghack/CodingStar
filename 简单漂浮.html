@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简单漂浮</title>
+</head>
+<style>
+    div {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 200px;
+    }
+    /* div *{
+        display: block;
+    } */
+    a{
+        display:inline-block;
+        position: relative;
+        left:165px;
+    }
+    img{
+        width: 200px;
+        height: 100px;
+    }
+</style>
+<body>
+    <div>
+        <a href="#">关闭</a>
+        <img src="1013/moviebanner.jpg">
+    </div>
+
+<script>
+    var Di=document.getElementsByTagName("div")[0];
+    var gb=document.getElementsByTagName("a")[0];
+    Di.style.left="0px";
+    Di.style.top="0px";
+    yd=setInterval(function(){
+        Di.style.left = parseInt((Di.style.left))+1+"px" 
+        Di.style.top = parseInt((Di.style.top))+1+"px" 
+    },50)
+    Di.onmouseover=function(){
+        clearInterval(yd);
+    }
+    Di.onmouseout=function(){
+        yd=setInterval(function(){
+        Di.style.left = parseInt((Di.style.left))+1+"px" 
+        Di.style.top = parseInt((Di.style.top))+1+"px" 
+    },50)
+    }
+    gb.onclick=function(){
+        Di.style.display = 'none';
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div style="width: 100px;
+            height: 200px;
+            background-color: gray;"> 123</div>
+    <script >
+        var d1 = document.getElementsByTagName("div")[0]
+        d1.onclick=function(){
+            //获取元素的宽高可以使用style.width和offseWidth
+            //alert(this.offsetWidth);
+            this.style.width = (this.offsetWidth+10)+"px";
+            this.style.height = (this.offsetHeight+10)+"px";
+        }
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            color: black;
+            text-decoration: none;
+        }
+        .xmiddle>button{
+            width: 80px;
+            height: 40px;
+            margin-top: 50px;
+            background-color: skyblue;
+        }
+        .xleft,.xright {
+            width: 300px;
+            height: 500px;
+            border: 1px solid skyblue;
+            margin-top: 10px;
+            overflow: scroll;
+            float: left;
+        }
+        .xleft>ul,.xright>ul {
+            margin-top: 3px;
+            text-align: center;
+        }
+        .xleft>ul>li>a,.xright>ul>li>a {
+            display: block;
+            border: 1px solid green;
+            background: #ccc;
+            text-align: center;
+            margin: 1px 10px;
+            height: 35px;
+            line-height: 35px;
+        }
+        .xmiddle {
+            float: left;    
+            margin: 40px 10px;
+        }
+        .xmiddle>button {
+            display: block;
+        }
+    </style>
+    <script src="jquery-1.5.1.js"></script>
+    <script>
+        $(function (argument) {
+
+            $(".xleft>ul>li>a,.xright>ul>li>a").click(function() {
+                if ($(this).parent().hasClass('xz')) {
+                    $(this).css({background:"#ccc",color:"black"}) // body... 
+                    $(this).parent().removeClass("xz")
+                }else{
+                    $(this).css({background:"green",color:"white"}) 
+                    $(this).parent().addClass("xz")
+                }
+            });
+
+
+
+
+            $(".xmiddle>:eq(0)").click(function(event) {
+                $s=$(".xleft>ul>li[class=xz]");
+                $s.appendTo('.xright>ul').removeClass("xz").children().css({background:"#ccc",color:"black"});
+            });
+
+            $(".xmiddle>:eq(1)").click(function(event) {
+                $s=$(".xright>ul>li[class=xz]")
+                $s.appendTo('.xleft>ul').removeClass("xz").children().css({background:"#ccc",color:"black"});
+            });
+
+            $(".xmiddle>:eq(2)").click(function(event) {
+                $(".xleft>ul").children().appendTo('.xright>ul').removeClass('xz').children().css({background:"#ccc",color:"black"});
+            });
+
+            $(".xmiddle>:eq(3)").click(function(event) {
+                $(".xright>ul").children().appendTo('.xleft>ul').removeClass('xz').children().css({background:"#ccc",color:"black"});
+            });
+
+            $(".forbid").click(function(){
+                $(".xmiddle>button").attr("disabled","true");
+            })
+            
+            $(".start").click(function(){
+                $(".xmiddle>button").removeAttr("disabled");
+            })
+
+            $(".getleft").click(function(){
+                var lcon=new Array();
+                var lobj1=new Object();
+                $(".xleft>ul>li").each(function(i,e){
+                    lobj1.id=i+1;
+                    lobj1.name=$(e).children('a').html();
+                    lcon.push(JSON.stringify(lobj1));
+                })
+                alert("左侧栏中有：["+lcon+"]");
+            })
+
+            $(".getright").click(function(){
+                var con=new Array();
+                var obj1=new Object();
+                $(".xright>ul>li").each(function(i,e){
+                    obj1.id=i+1;
+                    obj1.name=$(e).children('a').html();
+                    con.push(JSON.stringify(obj1));
+                    
+                })
+                alert("右侧栏中有：["+con+"]");
+            })
+
+            $(".getright").click(function(){
+                $(".xmiddle>button").removeAttr("disabled");
+            })
+        })
+
+    </script>
+</head>
+
+<body>
+<div>
+    <button class="getleft">获取左侧数据</button>
+    <button class="getright">获取右侧数据</button>
+    <button class="forbid">禁用按钮</button>
+    <button class="start">启用按钮</button>
+</div>
+<div class="xleft">
+    <ul>
+        <li><a href="#">选项1</a></li>
+        <li><a href="#">选项2</a></li>
+        <li><a href="#">选项3</a></li>
+        <li><a href="#">选项4</a></li>
+        <li><a href="#">选项5</a></li>
+        <li><a href="#">选项6</a></li>
+        <li><a href="#">选项7</a></li>
+        <li><a href="#">选项8</a></li>
+        <li><a href="#">选项9</a></li>
+        <li><a href="#">选项10</a></li>
+        <li><a href="#">选项11</a></li>
+        <li><a href="#">选项12</a></li>
+        <li><a href="#">选项13</a></li>
+        <li><a href="#">选项14</a></li>
+        <li><a href="#">选项15</a></li>
+        <li><a href="#">选项16</a></li>
+        <li><a href="#">选项17</a></li>
+        <li><a href="#">选项18</a></li>
+        <li><a href="#">选项19</a></li>
+        <li><a href="#">选项20</a></li>
+    </ul>
+</div>
+<div class="xmiddle">
+    <button>></button>
+    <button><</button>
+    <button>>>></button>
+    <button><<<</button>
+</div>
+<div class="xright">
+    <ul>
+        
+    </ul>
+</div>
+</body>
+</html>

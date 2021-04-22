@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+      *{margin: 0;
+        padding: 0;
+      }
+
+    </style>
+    <script type="text/javascript" src="../jquery-3.5.1/jquery-3.5.1.js">
+    </script>
+    <script>
+
+        $(function  (argument) {
+             $("input:eq(0)").click(function(event) {
+               $("ul>:lt(3)").css("fontSize","25px").css("backgroundColor","yellow")});
+            $("input:eq(1)").click(function(event) {
+               $("ul>:not(:eq(0))").css("fontSize","25px").css("backgroundColor","yellow")});
+
+            $("input:eq(2)").click(function(event) {
+               $("ul>:lt(8):gt(1)").css("fontSize","25px").css("backgroundColor","yellow")});
+        });
+    </script>
+</head>
+<body>
+    <input type="button" value="天下第三以上的所有元素加亮（包含第三）">
+    <input type="button" value="除了天下第一以外的所有元素加亮">
+    <input type="button" value="天下第三到天下第8的元素加亮">
+  <ul>
+    <li>天下第1</li>
+    <li>天下第2</li>
+    <li>天下第3</li>
+    <li>天下第4</li>
+    <li>天下第5</li>
+    <li>天下第6</li>
+    <li>天下第7</li>
+    <li>天下第8</li>
+    <li>天下第9</li>
+    <li>天下第10</li>
+  </ul>
+</body>
+</html>

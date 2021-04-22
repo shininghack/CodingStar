@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <select class="a1">
+        <option class="date">请选择年...</option>
+    </select>
+    <select class="a2">
+        <option class="date">请选择月...</option>
+    </select>
+    <select class="a3">
+        <option class="date">请选择日...</option>
+    </select>
+    <script>
+    var ddd=new Date();
+    var date = document.getElementsByClassName('date')[0];
+    //date.innerHTML=(ddd.getFullYear()).toString();
+    var a1 = document.getElementsByClassName('a1')[0];
+    var a2 = document.getElementsByClassName('a2')[0];
+    var a3 = document.getElementsByClassName('a3')[0];
+    for(i=1900;i<=ddd.getFullYear();i++){
+        var son = document.createElement("option");
+        son.innerHTML=i+"年";
+        son.value=i;
+        a1.append(son);
+    }
+    for(i=1;i<=12;i++){
+        var son = document.createElement("option");
+        son.innerHTML=i+"月";
+        son.value=i;
+        a2.append(son);
+    }
+    for(i=1;i<=31;i++){
+        var son = document.createElement("option");
+        son.innerHTML=i+"日";
+        son.value=i;
+        a3.append(son);
+    }
+    alert(a1.length);
+    </script>
+</body>
+</html>

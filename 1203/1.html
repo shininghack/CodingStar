@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .d1{
+            position: relative;
+            width: 1212px;
+            height: 988px;
+            margin: 0 auto;
+         
+        }
+        .d2{
+            width: 990px;
+            height: 50px;
+            margin: 0 auto;
+            
+        }
+        .d3{
+            width: 990px;
+            height: 2398px;
+            margin: 0 auto;
+        }
+        .image{
+            margin: 0 auto;
+            margin-left: -106px;
+        }
+        .dd{
+            position: absolute;
+
+            top:529px;
+            left: 760px;
+        }
+    </style>
+</head>
+<body>
+    <div class="d1"><div class="dd"><img class="gwc" src="效果2素材/gwc.jpg" alt=""></div><img src="效果2素材/top.jpg" alt=""></div>
+    <div class="d2"><img class="image" src="效果2素材/nav.jpg" alt=""></div>
+    <div class="d3"><img class="image" src="效果2素材/content.jpg" alt=""></div>
+    
+</body>
+<script>
+    var d1 = document.getElementsByClassName("d1")[0]
+    var d2 = document.getElementsByClassName("d2")[0]
+    var dd = document.getElementsByClassName("dd")[0]
+    var gwc = document.getElementsByClassName("gwc")[0]
+    function sizepd(){
+        var scroll = document.documentElement.scrollTop||document.body.scrollTop;
+        //console.log(scroll);
+        //console.log(d2.offsetLeft);
+        if(scroll>=d1.offsetHeight){
+            d2.style.position = 'fixed'
+            d2.style.top="0px";
+            d2.style.left = d1.offsetLeft+111+"px";
+            dd.style.position = 'fixed'
+            dd.style.top="0px";
+            dd.style.left = d2.offsetLeft+884+"px";
+            gwc.style.height="50px";
+        }else{
+            d2.style.position = '';
+            gwc.style.height='';
+            dd.style.position =  '';
+            dd.style.top = '';
+            dd.style.left = '';
+        }
+    }
+
+    window.onscroll=function(){
+        sizepd();
+    }
+    window.onresize=function(){
+        sizepd();
+    }
+
+</script>
+</html>

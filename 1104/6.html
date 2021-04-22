@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    body{height: 5000px}
+</style>
+<body>
+    <script>
+        var tim;
+        document.body.ondblclick=function(){
+            clearInterval(tim);
+            tim=setInterval("window.scrollBy(0,1)",10);
+        }
+            document.body.onclick=function(){
+                clearInterval(tim);
+            }
+
+    </script>
+</body>
+</html>

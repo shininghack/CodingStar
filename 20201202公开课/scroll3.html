@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>scroll3</title>
+	<style type="text/css">
+		*{margin:0;padding: 0;}
+		.father{height: 88px;background-color: green;width: 200px;overflow: hidden;}
+		.ad,.adb{height: 110px;}
+		.father li{height: 22px;}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<ul class="ad">
+			<li>天下第1</li>
+			<li>天下第2</li>
+			<li>天下第3</li>
+			<li>天下第4</li>
+			<li>天下第5</li>
+		</ul>
+		<ul class="adb">
+		</ul>
+	<div>
+	<script type="text/javascript">
+	var father=document.getElementsByClassName("father")[0];
+	var ad=document.getElementsByClassName("ad")[0];
+	var adb=document.getElementsByClassName("adb")[0];
+	adb.innerHTML=ad.innerHTML;
+	function test(){
+		tim=setInterval(function (argument) {
+			// father.scrollTop+=22;
+			father.scrollTop++;
+			if (father.scrollTop%22==0) {
+				clearInterval(tim);
+				setTimeout("test()",2000)
+			}
+			//console.log(adb.scrollHeight)
+			if (father.scrollTop>=adb.scrollHeight) {
+				father.scrollTop=0;
+			}
+		},10);
+	}
+	test();
+	</script>
+</body>
+</html>

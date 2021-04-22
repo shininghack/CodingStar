@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="click me!" id="hit">
+    
+</body>
+</html>
+
+<script type="text/javascript">
+    function haha (argument) {
+        alert("adsd");
+    }
+
+    var hit = document.getElementById("hit");
+    //hit.onclick=haha; //DOM节.事件=方法名
+    hit.onclick=function (argument) {
+        /* body... */
+        alert("aza");
+    }
+    var a=0;
+    setInterval(function (argument) {
+        a=a+1;
+        document.write(a);
+    }, 1000);
+
+
+</script>

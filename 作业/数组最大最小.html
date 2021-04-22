@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = Array(3,6,32,8,15,2,13)
+        var max=arr[0];
+        var min=arr[0];
+        var position1 = 0;
+        var position2 = 0;
+        for(i=1;i<arr.length;i++){
+            if(arr[i]>max){
+            max=arr[i];
+            position1 = i
+            alert(position1)
+            } 
+            if(arr[i]<min){
+                min=arr[i];
+                position2 = i
+            }
+        }
+        alert(max+'在第'+(position1+1));
+        alert(min+'在第'+(position2+1));
+    </script>
+</body>
+</html>

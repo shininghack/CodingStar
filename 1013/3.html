@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <textarea id="bk">132</textarea>
+    <p id="pp"></p>
+</body>
+</html>
+<script>
+    var bk = document.getElementById("bk");
+    var pp = document.getElementById("pp")
+    bk.onkeyup=function(){
+        //获取标签之间的文字有两种方法：innerHTML,innerText
+    pp.innerHTML="你已经输了"+bk.value.length+"个字，还剩"+(200-bk.value.length)+"个字";
+}
+
+</script>

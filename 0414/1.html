@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        body{
+            height: 3000px;
+        }
+
+        .father{
+            width: 202px;
+            height: 230px;
+            overflow: hidden;
+        }
+        ul li{width: 200px;border: 1px solid red;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;} /*将超出的文字变为省略号*/
+       /* .father{
+            width: 500px;
+            height: 500px;
+            padding: 10px;
+            background-color: yellow;
+            position: fixed;
+            top: 50px;
+        }*/
+        .son{
+            height: 100%;
+            background-color: green;
+        }
+        .s2{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            padding: 10px;
+            border: 1px solid black;
+        }
+    </style>
+    <script src="../jquery-1.7.2.js"></script>
+    <script>
+        $(function  (argument) {
+        //      $(window).scroll(function(event) {
+        //     console.log($(this).scrollTop())
+        //     console.log($(".son").position().top); //距离定位父元素的位置
+        //     console.log($(".son").offset().top); //距离文档左上角的位置 
+        // });
+        //     console.log($(".s2").height()+" "+$(".s2").innerHeight()+" "+$(".s2").outerHeight());
+        //     console.log($(".s2>div").height());
+       
+            $(".ss2").html($(".ss1").html())
+
+            // var tim = setInterval(function () {
+            //     setTimeOut
+            // });
+            var a = 0;
+            $(".father").hover(function() {
+                // var tim = setInterval(function(){
+                //     a++;
+                //     $(".father").scrollTop(a);
+                //     if(a>=$(".ss1").height()){
+                //         a=0;
+                //     }
+                // },20)
+            }, function() {
+               var stim = setTimeOut((setInterval(function(){
+                     a++;
+                    $(".father").scrollTop(a);
+                    if(a>=$(".ss1").height()){
+                        a=0;
+                }
+            },20)),3000)
+            });
+        })
+       
+    </script>
+</head>
+<body>
+    <!-- <div class="father">
+        <div class="son"></div>
+    </div> -->
+    <!-- <div class="s2">
+        <div>
+        我爱中华我爱中国我爱中华我爱中国我爱中华我爱中国我爱中华我爱中国我爱中华我爱中国我爱中华我爱中国我爱中华我爱中国我爱中华我爱中国我爱中华我爱中国我爱中华我爱中国我爱中华我爱中国我爱中华我爱中国我爱中华我爱中国我爱中华我爱中国我爱中华我爱中国我爱中华我爱中国我爱中华我爱中国我爱中华我爱中国我爱中华我爱中国
+    </div>
+    </div> -->
+<div class="father">
+    <ul class="ss1">
+        <li>天下第1天下第1天下第1天下第1天下第1天下第1天下第1天下第1天下第1天下第1天下第1天下第1天下第1</li>
+        <li>天下第2天下第2天下第2天下第2天下第2天下第2天下第2天下第2天下第2天下第2天下第2天下第2天下第2</li>
+        <li>天下第3天下第3天下第3天下第3天下第3天下第3天下第3天下第3天下第3天下第3天下第3天下第3天下第3</li>
+        <li>天下第4天下第4天下第4天下第4天下第4天下第4天下第4天下第4天下第4天下第4天下第4天下第4天下第4</li>
+        <li>天下第5天下第5天下第5天下第5天下第5天下第5天下第5天下第5天下第5天下第5天下第5天下第5天下第5</li>
+        <li>天下第6天下第6天下第6天下第6天下第6天下第6天下第6天下第6天下第6天下第6天下第6天下第6天下第6</li>
+        <li>天下第7天下第7天下第7天下第7天下第7天下第7天下第7天下第7天下第7天下第7天下第7天下第7天下第7</li>
+        <li>天下第8天下第8天下第8天下第8天下第8天下第8天下第8天下第8天下第8天下第8天下第8天下第8天下第8</li>
+        <li>天下第9天下第9天下第9天下第9天下第9天下第9天下第9天下第9天下第9天下第9天下第9天下第9天下第9</li>
+        <li>天下第10天下第10天下第10天下第10天下第10天下第10天下第10天下第10天下第10天下第10天下第10天下第10天下第10</li>
+    </ul>
+    <ul class="ss2"></ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script type="text/javascript">
+    var d1 = new Date(); //初始化一个日期，如果构造函数中没有参数，则表示当前日期+时间。
+    var d2 = Date(1981,1,28);
+    var d3=new Date(1981, 1, 28, 8, 30, 55);//年月日和时分秒初始化一个日期
+    var d4=new Date(1981,1,28,8,31,55)
+    var d5=new Date("1981/1/28 11:55:43")
+    //输出
+    document.write(d1.toString()+"<br>"); //根据本地时间设置，来显示时间。所以，
+    document.write(d1.toTimeString()+"<br>");
+    document.write(d1.toDateString()+"<br>");
+    document.write(d1.toLocaleString()+"<br>"); //相比toString()更推荐使用toLocaleString()系列
+    document.write(d3.toLocaleString()+"<br>");
+    document.write(d3.toLocaleString()+"<br>");
+    
+    //最最常用的方法
+    document.write((d4-d3)+"<br>"); //如果两个日期相减将会得到两个时间差多少个毫秒。
+    //get系列
+    document.write(d1.getDate()+"<br>");   //getDate() 从Date对象中返回一个月中的某一天（1~31）。
+    //getDay() 从Date对象返回一周中的某一天（0~6）。
+    var week = "日一二三四五六";
+    document.write("星期"+week[d1.getDay()]+"<br>");
+    document.write("星期"+week[d6.getDay()]+"<br>");
+    document.write(d1.getMonth()+"<br>");    //getMonth() 从Date对象返回月份（0~11）。  月份返回的值和实际值差1，真正输出月份时，需要将getMonth的+1后输出
+    document.write(d1.getFullYear()+"<br>");
+    document.write(d1.getYear()+"<br>");
+
+
+
+    //练习
+    document.write(d1.getFullYear()+"年"+(d1.getMonth()+1)+"月"+d1.getDate());
+
+
+</script>

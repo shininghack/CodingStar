@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="../jquery-3.5.1/jquery-3.5.1.js">
+    </script>
+    <script>
+        window.onload=function(){
+            alert(1)
+        }
+        window.onload=function(){
+            alert(2)
+        }
+        //jquery注册方法是 $("div").click(function){})
+        //ready执行速度快，不需要加载完图片和css等外部链接才显示。
+        $(document).ready(function(){
+            alert("test");
+        });
+        $(document).ready(function(){
+            alert("test1");
+        });
+        //以下方法同上，使用默认事件ready。是上面的简写版。
+        //eq表示第0个div，html表示innerHTML
+        $(function(){
+            alert($("div:eq(0)").html());
+        });
+    </script>
+</head>
+<body>
+<div>1d</div>
+<div>2d</div>
+<div>3d</div>
+<div>4d</div>
+<div>5d</div>
+<img src="../images/Koala.jpg" alt="">
+</body>
+</html>

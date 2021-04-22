@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var d1=new Date();
+    document.write(d1.toString()+"<br>");
+  //  document.write(d1.getDate());
+    var week = "日一二三四五六"
+    d1.getDate()<10?"0"+d1.getDate().toString():alert("no");
+    document.write(d1.getFullYear().toString()+(d1.getMonth()+1).toString()+(d1.getDate()<10?"0"+d1.getDate().toString():alert("no"))+"星期"+week[2])
+    
+</script>    
+</body>
+</html>

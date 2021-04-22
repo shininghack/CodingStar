@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="../jquery-3.5.1/jquery-3.5.1.js">
+    </script>
+    <script>
+
+        $(function  (argument) {
+            var div1 = document.getElementsByTagName("div")[0];
+            // $("div").click(function(event) {
+            //    alert(123) 
+            // });   //隐式迭代
+            $("div").click(function(event) {
+                //alert(this.innerHTML) 
+                //this是一个DOM元素
+                alert($(this).html());
+            }); 
+        });
+    </script>
+</head>
+<body>
+<div>1d</div>
+<div>2d</div>
+<div>3d</div>
+<div>4d</div>
+<div>5d</div>
+<img src="../images/Koala.jpg" alt="">
+</body>
+</html>

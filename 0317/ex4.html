@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        fieldset{
+          width: 600px;
+        }
+        legend{
+          text-align: center;
+        }
+    </style>
+    <script src="../jquery-1.5.1.js"></script>
+    <script>
+        $(function (argument) {
+          //01-表单选择器
+            console.log($(":input").length) //:input代表所有的表单元素包括select和textarea
+            console.log($("input").length)
+            console.log($(":submit").length) //type=submit和<button>
+            //:xxx等价于input[type=xxx]，注意：不存在:select和:textarea，因为不需要。
+          //02-表单属性过滤选择器
+          //console.log($(":disabled").removeAttr("disabled"));
+          console.log($(":disabled").length);
+          console.log($("input:checked").length);//如果写成:checked,input中单复选的选中和下拉列表的选中。
+          $(":button").toggle(function(event) {
+            $(":checkbox").attr("checked",true); /* JQ对象*/
+            $(this).val("全不选");
+          },function(){
+            $(":checkbox").attr("checked",false);
+            $(this).val("全选");
+          });
+          $(":checkbox").click(function(event) {
+            var num = $(":checked").length
+            
+            var str = ""
+            $("input:checked").each(function(i,val) { //map()方法主要用来遍历操作数组和对象，each()主要用于遍历jquery对象。
+              str += val.value
+              //str += $(this).val()
+            });
+            $("span").html("一共选了"+num+"个，分别是："+str+",")
+
+          });
+
+        });
+
+    </script>
+</head>
+<body>
+  <fieldset>
+  <legend>个人爱好    </legend>
+    <form action="">
+
+      
+      <input type="checkbox" value="体育">体育
+      <input type="checkbox" value="数学">数学
+      <input type="checkbox" value="语文">语文
+      <input type="checkbox" value="java">java
+      <input type="checkbox" value="jquery">jquery <br>
+      <span id="showMsg" style="color:red"></span>
+      <button>提交</button>
+
+    </form>
+
+  </fieldset>
+</body>
+</html>

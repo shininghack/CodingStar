@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        fieldset{
+          width: 600px;
+        }
+        legend{
+          text-align: center;
+        }
+    </style>
+    <script src="../jquery-1.5.1.js"></script>
+    <script>
+        $(function (argument) {
+          //01-表单选择器
+            console.log($(":input").length) //:input代表所有的表单元素包括select和textarea
+            console.log($("input").length)
+            console.log($(":submit").length) //type=submit和<button>
+            //:xxx等价于input[type=xxx]，注意：不存在:select和:textarea，因为不需要。
+          //02-表单属性过滤选择器
+          //console.log($(":disabled").removeAttr("disabled"));
+          console.log($(":disabled").length);
+          console.log($("input:checked").length);//如果写成:checked,input中单复选的选中和下拉列表的选中。
+          $(":button").toggle(function(event) {
+            $(":checkbox").attr("checked",true); /* JQ对象*/
+            $(this).val("全不选"); //如果前面是一个数组，则只能获取第一个！必须要用循环获取。
+            console.log($(this).val());
+          },function(){
+            $(":checkbox").attr("checked",false);
+            $(this).val("全选");
+          });
+        });
+
+    </script>
+</head>
+<body>
+  <fieldset>
+    <legend>用户登录</legend>
+    <form action="http://baidu.com">
+      <input type="text" name="xm" list="sss"><br>
+      <datalist id="sss">
+        <option value="zll">
+        <option value="xf">
+        <option value="wq">
+      </datalist>
+      <input type="password" name="mm"><br>
+
+      <input type="radio"><br>
+      <input type="checkbox"><input type="checkbox"><input type="checkbox"><br>
+      <input type="button" value="全选/反选"><br>
+      <input type="date" disabled><br>  
+      <input type="number"><br>
+      <input type="email"><br>
+      <input type="month" disabled><br>     
+      <input type="submit"><br>
+      <input type="reset"><br>
+      <input type="image"><br>
+      <input type="file" multiple><br>
+      
+      <select name="" id=""><br>
+        <option value=""></option>
+      </select>
+      <textarea name="" id="" cols="30" rows="10"></textarea>      <br>
+      <button>测试</button>
+    </form>
+  </fieldset>
+</body>
+</html>

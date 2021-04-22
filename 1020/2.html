@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div style="width: 100px;
+            height: 100px;
+            background-color: gray;"> 123</div>
+    <script >
+        var d1 = document.getElementsByTagName("div")[0]
+        d1.onclick=function(){
+            this.style.width = (parseInt(this.style.width)+10)+"px";
+            this.style.height = (parseInt(this.style.height)+10)+"px";
+        }
+       
+    </script>
+</body>
+</html>

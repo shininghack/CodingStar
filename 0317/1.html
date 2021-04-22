@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        h4{
+          background-color: orange;
+          width: 200px;
+          line-height: 40px;
+          height: 40px;
+        }
+        div{
+          width: 200px;
+          height: 240px;
+          background-color: #ccc;
+        }
+        h4[test]{
+          background-color: red;
+        }
+    </style>
+    <script src="../jquery-3.5.1/jquery-3.5.1.js"></script>
+    <script>
+        $(function (argument) {
+            //hover(mouseenter,mouseleave) 此函数有两个方法，第一个表示鼠标放上去发生事件，第二个表示鼠标移开发生事件。注意：不是mouseover和mouseout！这两对事件时有稍许差别!
+          $("h4").hover(function() {
+            $("div").hide(1000);
+          }, function() {
+            $("div").show(1000); /* Stuff to do when the mouse leaves the element */
+          }).trigger('mouseenter');
+          //trigger模拟事件
+          
+          //$("input[type=checkbox]").attr("checked",true); //attr方法设置同css，用来设置所有DOM元素的属性
+          alert($("input[type=checkbox][checked]").length)
+          
+        });
+
+    </script>
+</head>
+<body>
+    <h4>我是标题</h4>
+    <h4 test="test">我是标题2</h4>
+    <h4 test="test">我是标题2</h4>
+    <h4 test="test">我是标题2</h4>
+    <div>内容xxxxxxxxxx</div>
+    <input type="radio" ><input type="radio">
+    <input type="checkbox"><input type="checkbox" checked="checked"><input type="checkbox">
+    <input type="button">
+</body>
+</html>

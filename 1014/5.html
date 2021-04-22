@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" value="请输入关键字" class="ss">    
+</body>
+</html>
+<script>
+    var ss=document.getElementsByClassName("ss")[0]
+    ss.onfocus=function(){
+        if (this.value=="请输入关键字") {
+            this.value=""; // statement
+        }
+    }
+    ss.onblur=function(){
+        if(this.value==""){
+        this.value="请输入关键字"
+    }
+    }
+</script>

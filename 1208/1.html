@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        li{height: 40px;line-height: 40px;}
+        .father{
+            height: 240px;
+            background-color: pink;
+            width: 400px;
+            overflow: hidden;
+        }
+        .son1,.son2{
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <ul class="son1">
+            <li>我是新闻1，你快来看我0001</li>
+            <li>我是新闻2，你快来看我0002</li>
+            <li>我是新闻3，你快来看我0003</li>
+            <li>我是新闻4，你快来看我0004</li>
+            <li>我是新闻5，你快来看我0005</li>
+            <li>我是新闻6，你快来看我0006</li>
+            <li>我是新闻7，你快来看我0007</li>
+            <li>我是新闻8，你快来看我0008</li>
+        </ul>
+        <ul class="son2"></ul>
+
+    </div>    
+    <script>
+        var son1 = document.getElementsByClassName("son1")[0];
+        var son2 = document.getElementsByClassName("son2")[0];
+        var father = document.getElementsByClassName("father")[0];
+        var fatherTop=father.scrollTop;
+        son2.innerHtml=son1.innerHtml;
+        var son1Height =son1.scrollHeight;
+        console.log(fatherTop+"     "+son1Height)
+        setInterval(function(){
+            //father.scrollTop+=son1.children[0].offsetHeight;
+            var tim = setInterval(function(){
+                father.scrollTop++;
+                if(father.scrollTop%son1.children[0].offsetHeight==0){
+                    clearInterval(tim);
+                }
+            },20)
+            if(father.scrollTop>=son1.scrollHeight){
+                father.scrollTop=0
+            }
+        },4000);
+    </script>
+</body>
+</html>

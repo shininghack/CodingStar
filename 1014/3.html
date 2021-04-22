@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="checkbox" class="ck">
+    <input type="checkbox" class="ck">
+    <input type="checkbox" class="ck">
+    <input type="checkbox" class="ck">
+    <input type="checkbox" class="ck">
+    <input type="checkbox" class="ck">
+    <input type="checkbox" class="ck">
+    <input type="checkbox" class="ck">
+    <input type="checkbox" class="ck">
+    <input type="checkbox" class="ck">
+    <br/>
+    <input type="checkbox" class="ckAll">全选/取消
+</body>
+</html>
+<script>
+    var ckAll=document.getElementsByClassName("ckAll")[0]
+    var cks=document.getElementsByClassName("ck")
+    ckAll.onclick=function(){
+        for(i=0;i<cks.length;i++){
+            cks[i].checked=ckAll.checked;
+        }
+    }
+
+</script>

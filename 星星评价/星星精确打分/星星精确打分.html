@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{padding: 0;margin: 0;}
+        img{height: 50px;width: 48px;}
+        .full{
+            width: 260px;
+            cursor: pointer;
+        }
+        .wrap{
+            position: relative;
+            left: 50%;
+			margin-left: -130px;
+            height: 50px;
+            width: 260px;
+        }
+        .wrap div{
+            position: absolute;
+        }
+        .s1{
+            width: 260px;
+            cursor: pointer;
+        }
+        .s2{
+            overflow: hidden;
+            height: 50px;
+        }
+        
+    </style>
+    <script src="jquery-1.5.1.js"></script>
+    <script>
+        $(function (e) {
+///精确星打分///
+            function test(a){   //此方法利用宽度计算所占百分比（打的分数），精确到小数点后一位。因为盒子div的宽度是260px，总分是5分。所以每0.1所占的宽度就是52px（260/5）；
+                 return (a/52).toFixed(1);
+        }
+            // $.fn.myfun=function(a){
+            //     alert(a)
+            // }
+             var con;
+             $(".s2").width("0px"); //一共有两层，一层是空白的五颗星，另一层是涂色的五颗星。涂色的星星覆盖在上面，首先给它宽度设为0；
+             $(".wrap").mousemove(function(e) { 
+                var offsetX = e.pageX - $(this).offset().left; //这里使用e.offsetX会出问题，因为当鼠标移动到子元素上时，它会自动获取鼠标距离子元素的left值，导致出错。所以这里手动获取offsetX值。
+                $(".s2").width(offsetX+"px")  //设置遮罩层的宽度。制造出星星涂色效果。
+                console.log(offsetX);
+                // $().myfun(e);
+                con = test(offsetX);	//调用函数，通过宽度计算出评分返回给变量con。
+                 $(".evaluate").html("您的评价分数是")
+                  $("span").html(con)   //鼠标移动实时显示当前评分。
+             });
+
+             $(".wrap").click(function(e) {
+                alert("您最终的评价分数是："+con+" 谢谢评价！")   //点击时显示最终评分。
+             });
+        })
+    </script>
+</head>
+<body>
+<div class="wrap">
+    <div class="s1">
+        <img src="star1.png" alt="">
+        <img src="star1.png" alt="">
+        <img src="star1.png" alt="">
+        <img src="star1.png" alt="">
+        <img src="star1.png" alt="">
+    </div>
+    <div class="s2">
+        <img src="fullstar.PNG" class="full">
+    </div>
+</div>
+<div class="evaluate" style="position: relative;height: 30px;float: left;left: 50%;margin-left: -130px;"></div>
+ <span style="position: relative;color: red;font-weight: 600;left: 50%;margin-left: -10px;"></span>
+</body>
+</html>

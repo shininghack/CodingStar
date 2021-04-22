@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.body.ondblclick=function(){
+            setInterval("window.scrollBy(0,10)",100);
+
+        }
+        var dd= window.open("","","width=300,height=200,left = 300,top=300");
+        alert(dd.height);
+      //  dd.resizeTo(0,00)
+       /* setInterval(function(){
+            dd.resizeBy(0,10);
+
+            if(document.body.height==300){
+                dd.resizeBy(0,-10);
+            }
+        },100);*/
+    </script>
+</body>
+</html>

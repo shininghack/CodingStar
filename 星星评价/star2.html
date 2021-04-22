@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{padding: 0;margin: 0;}
+        img{height: 50px;width: 48px;}
+        .full{
+            width: 260px;
+            cursor: pointer;
+        }
+        .wrap{
+            position: relative;
+            height: 50px;
+            width: 260px;
+        }
+        .wrap div{
+            position: absolute;
+        }
+        .s1{
+            width: 260px;
+            cursor: pointer;
+        }
+        .s2{
+            /*float: left;*/
+            overflow: hidden;
+  /*          width:50px;*/
+            height: 50px;
+            /*display: none;*/
+        }
+        
+    </style>
+    <script src="../jquery-1.5.1.js"></script>
+    <script>
+        $(function (argument) {
+            function test(a){
+                 switch (true) {
+                    case a>=0&&a<=5:
+                        // statements_1
+                        return 0.1
+                        break;
+                    case a>5&&a<=10:
+                        // statements_1
+                        return 0.2
+                        break;
+                    case a>10&&a<=15:
+                        // statements_1
+                        return 0.3
+                        break;
+                    case a>15&&a<=20:
+                        // statements_1
+                        return 0.4
+                        break;
+                    case a>20&&a<=25:
+                        // statements_1
+                        return 0.5
+                        break;
+                    case a>25&&a<=30:
+                        // statements_1
+                        return 0.6
+                        break;
+                    case a>30&&a<=35:
+                        // statements_1
+                        return 0.7
+                        break;
+                    case a>35&&a<=40:
+                        // statements_1
+                        return 0.8
+                        break;
+                    case a>40&&a<=45:
+                        // statements_1
+                        return 0.9
+                        break;
+                    case a>45&&a<=52:
+                        // statements_1
+                        return 1
+                        break;
+                    case a>52&&a<=57:
+                        // statements_1
+                        return 1.1
+                        break;
+                    case a>57&&a<=62:
+                        // statements_1
+                        return 1.2
+                        break;
+                    case a>62&&a<=67:
+                        // statements_1
+                        return 1.3
+                        break;
+                    case a>67&&a<=72:
+                        // statements_1
+                        return 1.4
+                        break;
+                    case a>72&&a<=77:
+                        // statements_1
+                        return 1.5
+                        break;
+                    case a>77&&a<=82:
+                        // statements_1
+                        return 1.6
+                        break;
+                    case a>82&&a<=87:
+                        // statements_1
+                        return 1.7
+                        break;
+                    case a>87&&a<=92:
+                        // statements_1
+                        return 1.8
+                        break;
+                    case a>92&&a<=97:
+                        // statements_1
+                        return 1.9
+                        break;
+                    case a>97&&a<=105:
+                        // statements_1
+                        return 2
+                        break;
+                    case a>105&&a<=110:
+                        // statements_1
+                        return 2.1
+                        break;
+                    case a>110&&a<=115:
+                        // statements_1
+                        return 2.2
+                        break;
+                    case a>115&&a<=120:
+                        // statements_1
+                        return 2.3
+                        break;
+                    case a>120&&a<=125:
+                        // statements_1
+                        return 2.4
+                        break;
+                    case a>125&&a<=130:
+                        // statements_1
+                        return 2.5
+                        break;
+                    case a>130&&a<=135:
+                        // statements_1
+                        return 2.6
+                        break;
+                    case a>135&&a<=140:
+                        // statements_1
+                        return 2.7
+                        break;
+                    case a>140&&a<=145:
+                        // statements_1
+                        return 2.8
+                        break;
+                    case a>145&&a<=150:
+                        // statements_1
+                        return 2.9
+                        break;
+                    case a>150&&a<=159:
+                        // statements_1
+                        return 3
+                        break;
+                    case a>159&&a<=164:
+                        // statements_1
+                        return 3.1
+                        break;
+                    case a>164&&a<=169:
+                        // statements_1
+                        return 3.2
+                        break;
+                    case a>169&&a<=174:
+                        // statements_1
+                        return 3.3
+                        break;
+                    case a>174&&a<=179:
+                        // statements_1
+                        return 3.4
+                        break;
+                    case a>179&&a<=184:
+                        // statements_1
+                        return 3.5
+                        break;
+                    case a>184&&a<=189:
+                        // statements_1
+                        return 3.6
+                        break;
+                    case a>189&&a<=194:
+                        // statements_1
+                        return 3.7
+                        break;
+                    case a>194&&a<=199:
+                        // statements_1
+                        return 3.8
+                        break;
+                    case a>199&&a<=204:
+                        // statements_1
+                        return 3.9
+                        break;
+                    case a>204&&a<=210:
+                        // statements_1
+                        return 4
+                        break;
+                    case a>210&&a<=215:
+                        // statements_1
+                        return 4.1
+                        break;
+                    case a>215&&a<=220:
+                        // statements_1
+                        return 4.2
+                        break;
+                    case a>220&&a<=225:
+                        // statements_1
+                        return 4.3
+                        break;
+                    case a>225&&a<=230:
+                        // statements_1
+                        return 4.4
+                        break;
+                    case a>230&&a<=235:
+                        // statements_1
+                        return 4.5
+                        break;
+                    case a>235&&a<=240:
+                        // statements_1
+                        return 4.6
+                        break;
+                    case a>240&&a<=245:
+                        // statements_1
+                        return 4.7
+                        break;
+                    case a>245&&a<=250:
+                        // statements_1
+                        return 4.8
+                        break;
+                    case a>250&&a<=255:
+                        // statements_1
+                        return 4.9
+                        break;
+                    case a>255:
+                        // statements_1
+                        return 5
+                        break;
+            }
+        }
+            // $.fn.myfun=function(a){
+            //     alert(a)
+            // }
+
+
+
+            var con;
+             $(".s2").width("0px");
+             $(".s1 img").mouseover(function(e) {
+                if(!$(this).hasClass('js')){
+                 console.log(e.pageX)
+             }  
+             }).mousemove(function(e) {
+                $(".s2").width(e.pageX+"px")
+                console.log(e.pageX);
+                // $().myfun(e);
+                var ttt = test(e.pageX);
+                 $(".evaluate").html("您的评价分数是")
+                  $("span").html(ttt)
+               
+                
+
+             });
+             $(".s2").mousemove(function(e) {
+                $(".s2").width(e.pageX+"px")  /* Act on the event */
+                console.log(e.pageX);
+                var ttt = test(e.pageX);
+                 $(".evaluate").html("您的评价分数是")
+                 $("span").html(ttt)
+             });
+
+             $(".s1 img").click(function(e) {
+                var ttt = test(e.pageX);
+                alert("您最终的评价分数是："+ttt+" 谢谢评价！")
+             });
+        })
+    </script>
+</head>
+<body>
+<div class="wrap">
+    <div class="s1">
+        <img src="star1.png" alt=""></li>
+        <img src="star1.png" alt=""></li>
+        <img src="star1.png" alt=""></li>
+        <img src="star1.png" alt=""></li>
+        <img src="star1.png" alt=""></li>
+    </div>
+    <div class="s2">
+        <img src="fullstar.PNG" class="full">
+    </div>
+
+</div>
+<div class="evaluate" style="position: relative;height: 30px;float: left;"></div>
+<span style="color: red;font-weight: 600;"></span>
+</body>
+</html>

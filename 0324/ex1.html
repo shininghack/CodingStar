@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        
+    </style>
+    <script src="../jquery-3.5.1/jquery-3.5.1.js"></script>
+    <script>
+        $(function (argument) {
+          for(var i = 1950; i < new Date().getFullYear();i++){
+            $op="<option value='"+i+"'>"+i+"年</option>"
+            $("#y").append($op);
+          }
+          
+        });
+
+    </script>
+</head>
+<body>
+    <select name="y" id="y">
+      <option value="">请选择年份</option>
+    </select>
+    <select name="m" id="m">
+      <option value="">请选择年份</option>
+    </select>
+    <select name="d" id="d">
+      <option value="">请选择年份</option>
+    </select>
+
+</body>
+</html>

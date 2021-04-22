@@ -1,0 +1,62 @@
+
+<HTML><HEAD><meta charset="UTF-8"><TITLE>按钮慢慢变色</TITLE>
+<STYLE type=text/css>
+BODY {
+ MARGIN-TOP: 0px; FONT-SIZE: 9pt; MARGIN-LEFT: 0px; MARGIN-RIGHT: 0px; FONT-FAMILY: "宋体"
+}
+A {
+ FONT-WEIGHT: 400; FONT-SIZE: 9pt; COLOR: black; TEXT-DECORATION: none
+}
+A:hover {
+ FONT-WEIGHT: 400; FONT-SIZE: 9pt; COLOR: red; TEXT-DECORATION: underline
+}
+A:active {
+ FONT: 9pt "宋体"; CURSOR: hand; COLOR: #ff0033
+}
+.STYLE1 {
+ color: #000099;
+ font-weight: bold;
+ font-family: "华文新魏";
+ font-size: 30px;
+}
+.STYLE2 {
+ color: #FF3399;
+ font-size: 40px;
+ font-family: "华文行楷";
+}
+</STYLE>
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+</HEAD>
+<BODY bgColor=#fef4d9>
+<CENTER>
+ <span class="STYLE2">按钮慢慢变色</span>
+</CENTER><BR>
+<CENTER>
+<TABLE borderColor=#66FF00 border=5 borderlight="green">
+ <TBODY>
+ <TR>
+ <TD align=middle><span class="STYLE1">效果显示</span></TD>
+ </TR>
+ <TR>
+ <TD align=middle>
+  <SCRIPT language=JavaScript>
+hexColor = ["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"];
+function mOver() {
+for (i = 0; i < 13; i++) {
+setTimeout('document.myForm.button.style.background = "#'+hexColor[12-i]+'0'+hexColor[12-i]+'0c0";', i * 40);
+ }
+}
+function mOut() {
+document.myForm.button.value = "进入脚本之家";
+for (i = 0; i < 12; i++) {
+setTimeout('document.myForm.button.style.background = "#'+hexColor[i]+'0'+hexColor[i]+'0c0";', i * 40);
+ }
+}
+// End -->
+</SCRIPT>
+  <FORM name=myForm>
+  <input onMouseDown='document.myForm.button.value=" 谢谢"' onMouseOver=mOver() onClick='window.location="https://www.jb51.net/"' onMouseOut=mOut() type=button value=鼠标放在上面 name=button >
+  </FORM></TD></TR></TBODY></TABLE>
+</CENTER>
+</BODY>
+</HTML>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <img src="moviebanner.jpg" title="DOMBOM" id="pic">
+</body>
+</html>
+<script>
+    var pic=document.getElementById("pic");
+    //给该DOM节点注册方法，以下是常用方法
+    /*pic.onclick=new function(){
+        window.close();
+    }*/
+    pic.onmouseover=function(){
+        window.close();
+    }
+    document.body.onload=function(){   //在DOM编程中，获取body对象，必须使用document.body,不推荐使用document.get系列方法
+        alert("welcome!")
+    }
+    document.body.onunload=function(){
+        alert("byebye!");
+    }
+</script>

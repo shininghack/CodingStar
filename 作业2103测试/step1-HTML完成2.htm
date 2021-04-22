@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="jquery-1.5.1.js"></script>
+
+    <style>
+    	*{margin: 0;padding: 0;}
+    	li {list-style: none;}
+    	a {text-decoration: none;}
+    	.listAll {
+    		width: 600px;height: 260px;
+    		border: 1px solid orange;
+    		margin: 0 auto;
+    	}
+    	.listAll>ul{
+    		text-align: center;	
+
+    	}
+    	.listAll>ul>li{
+    		float: left;
+    		height: 40px;
+    		line-height: 40px;
+    		width: 200px;
+    	}
+    	.showMore {
+    		clear: both;
+    		text-align: center;
+    		padding-top: 20px;
+    	}
+    	.showMore>a{
+    		border: 1px solid orange;
+    		width: 300px;
+    		text-align: center;
+    		padding-left: 20px;
+    		background: url(images/down.gif) no-repeat 5px 5px;
+    	}
+    	.hot{color: red;}
+    </style>
+
+    <script>
+    	$(function (argument) {
+    		$("ul>li:gt(6):not(:last)").hide();
+    		$(".showMore>a").toggle(function(event) {
+    		 	$("ul>li").fadeIn(200); /* Act on the event */
+    		 	$(this).css('background','url(images/up.gif) no-repeat 5px 5px').children().html("隐藏部分品牌")
+
+   
+    		},function(){
+    			$("ul>li:gt(6):not(:last)").fadeOut(200);
+    			$(this).css('background','url(images/down.gif) no-repeat 5px 5px').children().html("显示部分品牌")
+
+    		}
+
+
+    		);
+
+
+
+    		return false; 
+    	})
+
+    </script>
+</head>
+<body>
+<div class="listAll">
+	<ul>
+		<li ><a href="#">佳能</a><i>(30440) </i></li>
+		<li ><a href="#">索尼</a><i>(27220) </i></li>
+		<li ><a href="#">三星</a><i>(20808) </i></li>
+		<li ><a href="#">尼康</a><i>(17821) </i></li>
+		<li ><a href="#">松下</a><i>(12289) </i></li>
+		<li ><a href="#">卡西欧</a><i>(8242) </i></li>
+		<li ><a href="#">富士</a><i>(14894) </i></li>
+		<li ><a href="#">柯达</a><i>(9520) </i></li>
+		<li ><a href="#">宾得</a><i>(2195) </i></li>
+		<li ><a href="#">理光</a><i>(4114) </i></li>
+		<li ><a href="#">奥林巴斯</a><i>(12205) </i></li>
+		<li ><a href="#">明基</a><i>(1466) </i></li>
+		<li ><a href="#">爱国者</a><i>(3091) </i></li>
+		<li ><a href="#">其它品牌相机</a><i>(7275) </i></li>
+	</ul>
+	<div class="showMore">
+		<a href="more.html"><span>显示全部品牌</span></a>
+	</div>
+</div>
+</body>
+</html>

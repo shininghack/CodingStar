@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        fieldset{
+          width: 600px;
+        }
+        legend{
+          text-align: center;
+        }
+    </style>
+    <script src="../jquery-1.5.1.js"></script>
+    <script>
+        $(function (argument) {
+          $("div").each(function (i,ele) {
+            console.log("当前元素的索引是："+i+"  "+$(ele).html()) 
+            $(this).html(($(this).html()+(i+1)))
+          });  //方法一：i代表当前元素的索引，ele代表当前DOM元素与this完全等价。
+               //方法二：
+          // $("div").each(function () {
+          //   console.log("当前元素的索引是："+i+"  "+$(this).html()) 
+          // }); 
+         // console.log($("div").html())
+        });
+
+    </script>
+</head>
+<body>
+  <div>123</div>
+  <div>456</div>
+  <div>789</div>
+  <div>1JQ</div>
+  <div>A23</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function zc (a){
+        var pi=Math.PI;
+        var rez=pi*2*a
+        return (rez).toFixed(1);
+    }
+    function mj (a){
+        var pi=Math.PI;
+        var rem=pi*a*a;
+        return (rem).toFixed(1);
+    }
+    
+    var a=parseInt(prompt("请输入一个半径。"));
+    document.write("周长:"+zc(a)+"面积："+mj(a));
+</script>

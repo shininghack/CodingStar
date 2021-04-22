@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{padding: 0;margin: 0;}
+        img{margin-right: 10px;}
+        div{width: 400px;height: 330px;}
+        p{background-color: black;color: white;}
+    </style>
+    <script src="../jquery-1.5.1.js"></script>
+    <script>
+        $(function  (argument) {
+            $("div").hide();
+            $("img").mouseover(function(e) {
+                var a = $(this).index();
+                $("div").eq(a).show().addClass('hello').css({position:"absolute",left:e.pageX,top:e.pageY,opacity:"1"});
+            }).mouseout(function(event) {
+                $(".hello").hide().removeClass('hello');
+            }).mousemove(function(e) {
+                $(".hello").css({left:e.pageX+10+"px",top:e.pageY+10+"px",opacity:"1"})
+            });
+            ; 
+        })
+    </script>
+</head>
+<body>
+    <img src="img/a1.jpg" alt="">
+     <img src="img/a2.jpg" alt="">
+     <img src="img/a3.jpg" alt="">
+     <img src="img/a4.jpg" alt="">
+     <div><img src="img/a1b.jpg" alt=""><p>MP3</p> </div>
+     <div><img src="img/a2b.jpg" alt=""><p>随身听</p></div>
+     <div><img src="img/a3b.jpg" alt=""><p>苹果手机iPhone</p></div>
+     <div><img src="img/a4b.jpg" alt=""><p>笔记本电脑</p></div>
+</body>
+</html>

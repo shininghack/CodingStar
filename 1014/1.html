@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="d1"></div>
+    <div class="d2"></div>
+    <div></div>
+    <div name="d4"></div>
+</body>
+</html>
+<script>
+    var d1=document.getElementById("d1");
+    var d2=document.getElementsByClassName("d2")[0];
+    d2.innerHTML="根据class来获取元素";
+    var d3=document.getElementsByTagName("div")[2];
+    
+    setInterval(function(){
+        d3.innerHTML=new Date().toLocaleString();
+    },1000)
+    var d4=document.getElementsByName("d4")[0]
+    d4.innerHTML="<B>Hello,I'm Getting From Name!</B>";
+
+
+</script>

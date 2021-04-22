@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .df{
+            width: 500px;
+            height: 500px;
+            background-color: red;
+        }
+        .d1{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+        .d2{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+        .d3{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+        .d4{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="df" >
+        <div class="d1" >
+            <ul>
+                <li>hello</li>
+                <li>hello</li>
+                <li>hello</li>
+                <li>hello</li>
+            </ul>
+        </div>
+        <div class="d2" >
+            <ul>
+                <li>hello</li>
+                <li>hello</li>
+                <li>hello</li>
+                <li>hello</li>
+            </ul>
+        </div>
+        <div class="d3">
+            <ul>
+                <li>hello</li>
+                <li>hello</li>
+                <li>hello</li>
+                <li>hello</li>
+            </ul>
+        </div>
+        <div class="d4">
+            <ul>
+                <li>hello</li>
+                <li>hello</li>
+                <li>hello</li>
+                <li>hello</li>
+            </ul>
+        </div>
+    </div>
+    
+</body>
+</html>
+<script>
+    var d2=document.getElementsByClassName("d2")[0]
+    //var d3=d2.nextSibling;
+    var d1=d2.nextElementSibling||d2.nextSibling//parentNode是一个属性，不是方法。d2.parentNode提取的是一个父节点
+    d2.onclick=function(){
+       // d1.style.backgroundColor = "black"
+        //this.parentNode.style.display = 'none';
+       // var d3=this.nextSibling;//||this.nextElementSibling|;
+        
+        var d3=this.previousElementSibling||this.previousSibling;
+        d3.style.backgroundColor = 'purple';
+        d1.style.display = 'none';
+    }
+    var df=document.getElementsByClassName("df")[0]
+    var sons=df.children;//获取所有DOM节点，包含DOM元素节点、属性节点、文本节点
+    var sons2=df.childNodes; //获取所有节点获取所有节点，包含DOM元素节点、属性节点、文本节点
+    alert(sons.length);
+    alert(sons2.length)
+    for(var i = 0;i<sons.length;i++){
+        sons[i].style.backgroundColor = "yellow!"
+    }
+</script>

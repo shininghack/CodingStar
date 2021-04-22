@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        ul li{ font-size: 14px; background-color: red;margin: 10px; width: 200px;list-style: none;height: 30px;line-height: 30px; text-align: center;}
+
+    </style>
+</head>
+<body>
+    <ul id="ul">
+        <li>aaa</li>
+        <li>aaa</li>
+        <li>aaa</li>
+        <li>aaa</li>
+        <li>aaa</li>
+        <li>aaa</li>
+        <li>aaa</li>
+        <li>aaa</li>
+        <li>aaa</li>
+        <li>aaa</li>
+    </ul>
+</body>
+</html>
+<script>
+    var lis=document.getElementById("ul").children;
+    for(var i=0;i<lis.length;i++){
+        lis[i].onmouseover=function(){
+            for(var i=0;i<lis.length;i++){
+                lis[i].style.backgroundColor = 'red'
+            }
+            this.style.backgroundColor  = 'yellow';
+        }
+}
+</script>

@@ -1,37 +1,28 @@
-## Welcome to GitHub Pages
+## Welcome to Lsx's code preview space!
 
-You can use the [editor on GitHub](https://github.com/shininghack/web170218/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+我的代码整合仓库 地址：[GitHub](https://github.com/shininghack/web170218/edit/gh-pages/index.md) 这里整合了我学习JS以及Jquery中所有的源代码。
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+### 本站说明
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+本站是基于GitPages搭建，我将所有代码的运行结果预览放于本站中。以下将列出仓库中部分html文件的预览效果，所有效果均可在代码仓库中找到源代码。
 
-```markdown
-Syntax highlighted code block
+### 目录
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
+#### 1. [天猫超市轮播图（自动+手动翻页）](https://shininghack.github.io/web170218/%E5%9B%BE%E7%89%87%E5%B9%BB%E7%81%AF%E7%B4%A0%E6%9D%90/ex.html)
+####  2. []()
+####  3.
 
-**Bold** and _Italic_ and `Code` text
 
-[Link](url) and ![Image](src)
-```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+另附Markdown官方文档： [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
+### 声明
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/shininghack/web170218/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+本人是程序员小白，初学编程，以后会不定期更新。类容包括：web前端、数据库、jsp、php、node.js、vue、c语言、c++、python等。代码纯个人编写，如有错误和不足请多多指出，谢谢~
 
-### Support or Contact
+#### 小秘密
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+目前本人组成小团队正在合作完成一个全站小项目，如果完工，会第一时间上传到这里哦！敬请关注~

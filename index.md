@@ -11,7 +11,7 @@
 
 
 
-#### 1. [天猫超市轮播图（自动+手动翻页）](https://shininghack.github.io/web170218/%E5%9B%BE%E7%89%87%E5%B9%BB%E7%81%AF%E7%B4%A0%E6%9D%90/ex.html)
+#### 1. [天猫超市轮播图（自动+手动翻页）](https://shininghack.github.io/codingStar/%E5%9B%BE%E7%89%87%E5%B9%BB%E7%81%AF%E7%B4%A0%E6%9D%90/ex.html)
 ####  2. []()
 ####  3.
 

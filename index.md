@@ -1,6 +1,6 @@
 # **Welcome to Lsx's code preview space!**
 
-我的代码整合仓库 地址：[GitHub](https://github.com/shininghack/web170218/edit/gh-pages/index.md) 这里整合了我学习JS以及Jquery中所有的源代码。
+点击顶部“**View on GitHub**”按钮即可查看我的代码整合仓库 这里整合了我学习JS以及Jquery中所有的源代码。
 
 
 ## 本站说明

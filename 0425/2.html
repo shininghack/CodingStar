@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{padding: 0;margin: 0;}
+        ul{
+            height: 30px;
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        ul li{
+            height: 30px;
+            width: 30px;
+            line-height: 30px;
+            text-align: center;
+            float: left;
+            border: 1px solid black;
+            margin-right: 10px;
+        }
+        ul li:hover{
+            cursor: pointer;
+        }
+        textarea{
+            height: 100px;
+            width: 300px;
+            display: block;
+            clear: both;
+            margin: 20px 0;
+            
+        }
+        textarea:focus{
+            outline: 1px double gold;
+            border: none;
+            box-shadow: 0px 1px 4px rgba(252, 6, 252, 0.808),
+				0px 0px 20px rgba(92, 245, 3, 0.3) inset;
+        }
+        .b {
+            font-weight: bolder;
+        }
+        .i {
+            font-style: italic;
+        }
+        .u {
+            text-decoration: underline;
+        }
+    </style>
+    <script src="../jquery-1.5.1.js"></script>
+    <script>
+        $(function(){
+            $("ul>li:nth-child(1)").click(function(){
+                $(".text").stop(false,false).animate({height:"+=30px"},200)
+            })
+            $("ul>li:nth-child(2)").click(function(){
+                console.log($(".text").height())
+                if($(".text").height()>70){
+                    $(".text").stop(false,false).animate({height:"-=30px"},200)
+                }
+            })
+            $("ul>li:nth-child(3)").click(function(){
+                $(".text").animate({scrollTop:"-=60px"},200)
+            })
+            $("ul>li:nth-child(4)").click(function(){
+                $(".text").animate({scrollTop:"+=60px"},200)
+            })
+            $("ul>li:nth-child(5)").toggle(function(){
+                $(".text").addClass("b")
+            },function(){
+                $(".text").removeClass("b")
+            })
+            $("ul>li:nth-child(6)").toggle(function(){
+                $(".text").addClass("i")
+            },function(){
+                $(".text").removeClass("i")
+            })
+            $("ul>li:nth-child(7)").toggle(function(){
+                $(".text").addClass("u")
+            },function(){
+                $(".text").removeClass("u")
+            })
+            $("ul>li:nth-child(8)").click(function(){
+                $(".text").css('fontSize',parseInt($(".text").css('fontSize'))+2+"px");
+            })
+            $("ul>li:nth-child(9)").click(function(){
+                $(".text").css('fontSize',parseInt($(".text").css('fontSize'))-2+"px");
+            })
+            $("textarea").keyup(function(){
+                var x = ($(this).val().length)
+                var xz = $(this).val().substr(0,500)
+                console.log(xz)
+                var left = 500-x;
+                console.log(left)
+                if(left<1){
+                    alert("您的字数已达上限！")
+                    x = 500;
+                    $(this).val(xz)
+                }
+                $("span").html("您输入了"+x+"个字，剩余"+(500-x)+"个字");
+            })
+
+        })
+    </script>
+</head>
+<body>
+    <ul>
+        <li>+</li>
+        <li>-</li>
+        <li>上</li>
+        <li>下</li>
+        <li>B</li>
+        <li>i</li>
+        <li>u</li>
+        <li>F+</li>
+        <li>F-</li>
+    </ul>
+    <textarea name="" id="" class="text" maxlength="500"></textarea> <!--最大长度500-->
+    <span>您输入了0个字，剩余500个字</span>
+</body>
+</html>

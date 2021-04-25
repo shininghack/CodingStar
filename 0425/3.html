@@ -1,0 +1,26 @@
+<html>
+<head>
+<script type="text/javascript" src="../jquery-1.5.1.js"></script>
+</head>
+<body>
+  <p>
+    使用oninput以及onpropertychange事件检测文本框内容：
+  </p>
+  <p>
+    <input type="text" name="inputorp_i" id="inputorp_i" autocomplete="off"/>
+    <span id="inputorp_s"></span>
+    <script type="text/javascript">
+      //先判断浏览器是不是万恶的IE，没办法，写的东西也有IE使用者
+      var bind_name = 'input';
+      
+      $('#inputorp_i').bind(bind_name, function(){
+        $('#inputorp_s').text($(this).val());
+          if($(this).val().length>10){
+            $(this).input()
+        }
+        
+      })
+    </script>
+  </p>
+</body>
+</html>

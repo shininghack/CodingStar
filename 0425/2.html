@@ -52,7 +52,9 @@
     <script>
         $(function(){
             $("ul>li:nth-child(1)").click(function(){
-                $(".text").stop(false,false).animate({height:"+=30px"},200)
+                if(!$(".text").is(":animated")){
+                    $(".text").animate({height:"+=30px"},200)
+                }
             })
             $("ul>li:nth-child(2)").click(function(){
                 console.log($(".text").height())

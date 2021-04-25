@@ -57,7 +57,9 @@
             $("ul>li:nth-child(2)").click(function(){
                 console.log($(".text").height())
                 if($(".text").height()>70){
-                    $(".text").stop(false,false).animate({height:"-=30px"},200)
+                    if(!$(".text").is(":animated")){
+                        $(".text").animate({height:"-=30px"},200)
+                    }
                 }
             })
             $("ul>li:nth-child(3)").click(function(){
@@ -89,15 +91,15 @@
             })
             $("textarea").keyup(function(){
                 var x = ($(this).val().length)
-                var xz = $(this).val().substr(0,500)
-                console.log(xz)
+                // var xz = $(this).val().substr(0,500)
+                //console.log(xz)
                 var left = 500-x;
                 console.log(left)
-                if(left<1){
-                    alert("您的字数已达上限！")
-                    x = 500;
-                    $(this).val(xz)
-                }
+                // if(left<1){
+                //     alert("您的字数已达上限！")
+                //     x = 500;
+                //     $(this).val(xz)
+                // }
                 $("span").html("您输入了"+x+"个字，剩余"+(500-x)+"个字");
             })
 

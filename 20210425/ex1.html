@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        *{margin: 0; padding: 0;}
+        ul li{float: left; list-style: none; cursor: pointer; border: 1px solid red; text-align: center; line-height: 20px; width: 20px; height: 20px;}
+        textarea{width: 400px; height: 300px;}
+    </style>
+    <script type="text/javascript" src="../jquery-1.7.2.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.sub ul li').click(function () {
+                $(this).css('backgroundColor','yellow')
+                if($(this).index()==0){
+                    $('.sub ul li:eq(1)').css('backgroundColor','white')
+                    if($('textarea').height()<=400) $('textarea').stop(true,true).animate({height: '+=20px'},10);
+                }else if($(this).index()==1){
+                    $('.sub ul li:eq(0)').css('backgroundColor','white')
+                    if($('textarea').height()>=100) $('textarea').stop(true,true).animate({height: '-=20px'},10);
+                }else if($(this).index()==2){
+                    $('.sub ul li:eq(3)').css('backgroundColor','white')
+                    $('textarea').stop(true,true).animate({scrollTop: '-=30px'},10);
+                }else if($(this).index()==3){
+                    $('.sub ul li:eq(2)').css('backgroundColor','white')
+                    $('textarea').stop(true,true).animate({scrollTop: '+=30px'},10);
+                }else if($(this).index()==7){
+                    $('textarea').css('fontSize',parseInt($('textarea').css('fontSize'))+2+'px');
+                }else if($(this).index()==8){
+                    $('textarea').css('fontSize',parseInt($('textarea').css('fontSize'))-2+'px');
+                }
+            })
+            $('.sub ul li:eq(4)').toggle(function () {
+                $('textarea').css('fontWeight','700');
+            },function () {
+                $('textarea').css('fontWeight','100');
+            })
+            $('.sub ul li:eq(5)').toggle(function () {
+                $('textarea').css('fontStyle','italic');
+            },function () {
+                $('textarea').css('fontStyle','normal');
+            })
+            $('.sub ul li:eq(6)').toggle(function () {
+                $('textarea').css('textDecoration','underline');
+            },function () {
+                $('textarea').css('textDecoration','none');
+            })
+            $('textarea').keyup(function () {
+                $('.font').html('你已经输入了'+$('textarea').val().length+'个字，还剩'+(500-$('textarea').val().length)+'个字');
+                if($('textarea').val().length>=500){
+                    $('.font').html('已超出，将会隐藏');
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="sub">
+        <ul>
+            <li>+</li>
+            <li>-</li>
+            <li>上</li>
+            <li>下</li>
+            <li>B</li>
+            <li>i</li>
+            <li>u</li>
+            <li>f+</li>
+            <li>f-</li>
+        </ul>
+    </div><br><br>
+    <textarea name="" id="" cols="30" rows="10" maxlength="500"></textarea>
+    <div class="font"></div>
+</body>
+</html>

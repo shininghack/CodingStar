@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        body{background: black;}
+        li {list-style: none;float: left;margin: 0 10px 10px 0;}
+        a {text-decoration: none;color: white;}
+            
+        .wrap{
+            margin: 100px auto 0;
+            width: 630px;
+            height: 394px;
+            padding: 10px 0 0 10px;
+            background: #000;
+            overflow: hidden;
+            border: 1px solid #fff;
+        }
+        ul li{
+            position: relative;
+            float: left;
+        }
+
+        .perDiv{
+            display: none;
+            width: 200px;
+            height: 186px;
+            /*text-align: center;
+            line-height: 186px;*/
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: rgba(0,0,0,0.8);
+            /*background-color: */
+            color: white;
+            /*opacity: 0;*/
+            z-index: 8888;
+            display: block;
+        }
+        .perDiv>div{
+            height: 80px;
+            width: 100px;
+            /*line-height: 50px;*/
+            text-align: center;
+           position: absolute;
+           top: 0;
+           left: 0;
+           bottom: 0;
+           right: 0;
+           margin:auto;
+        }
+        .perDiv .nei div{
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 30px;
+            margin-top: 10px;
+            background-color: orange;
+            cursor: pointer;
+        }
+        
+
+    </style>
+    <script src="jquery-1.5.1.js"></script>
+    <script>
+        $(function (argument) {
+            $(".perDiv").hide();
+            $("ul li").hover(function() {
+                $(this).children().stop(true,true).fadeIn(500).end().siblings().children('div').stop(true,true).fadeOut(200)
+               // $(this).children().animate({opacity: 0.8}, 200)
+            }, function() {
+                $(".perDiv").fadeOut(200)
+            });
+})
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <ul>
+            <li><img src="images/01.jpg" alt=""><div class="perDiv"><div class="nei"><p>北</p><div>点击进入</div></div></div></li>
+            <li><img src="images/02.jpg" alt=""><div class="perDiv"><div class="nei"><p>京</p><div>点击进入</div></div></div></li>
+            <li><img src="images/03.jpg" alt=""><div class="perDiv"><div class="nei"><p>欢</p><div>点击进入</div></div></div></li>
+            <li><img src="images/04.jpg" alt=""><div class="perDiv"><div class="nei"><p>迎</p><div>点击进入</div></div></div></li>
+            <li><img src="images/05.jpg" alt=""><div class="perDiv"><div class="nei"><p>你</p><div>点击进入</div></div></div></li>
+            <li><img src="images/06.jpg" alt=""><div class="perDiv"><div class="nei"><p>呀</p><div>点击进入</div></div></div></li>
+        </ul>       
+    </div>
+</body>
+</html>

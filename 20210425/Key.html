@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Key</title>
+    <style type="text/css"></style>
+    <script type="text/javascript" src="../jquery-1.7.2.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('input').keydown(function () {
+                return false;
+                console.log($(this).val().length);   // 对中文不友好
+            })   // 可以阻止
+            $('input').keyup(function () {
+                return false;
+                console.log($(this).val().length);   // 对中文友好
+            })   // 无法阻止
+
+        })
+    </script>
+</head>
+<body>
+    <input type="text">
+</body>
+</html>

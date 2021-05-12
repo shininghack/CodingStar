@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>each</title>
+    <style type="text/css">
+        *{margin: 0; padding: 0;}
+    </style>
+    <script type="text/javascript" src="../jquery-1.7.2.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            // each 的用法
+            // index 就是当前元素的索引，val 当前元素对应的值，this 相当于 val
+            // 应用 1：遍历 JQ 对象，index 返回索引，val 和 this 返回的是当前 DOM 元素
+            $.each(array/object, function(index, val) {
+                 console.log(val.innerHTML);
+            });
+            // 应用 2：遍历 Json 或者 Array
+            var json={'name':'sjf','age':'18','birthday':'1-28'};
+            var arr=['sjf','age','birthday'];
+            $.each(json, function(index, val) {
+                 console.log(index+' '+val);
+            });
+            $.each(arr, function(index, val) {
+                 console.log(index+' '+val);
+            });
+        })
+    </script>
+</head>
+<body>
+    <div>01</div>
+    <div>02</div>
+    <div>03</div>
+    <div>04</div>
+</body>
+</html>

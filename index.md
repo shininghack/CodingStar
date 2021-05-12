@@ -19,9 +19,11 @@
 
 另附Markdown官方文档： [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
+其他：[关于vue的小项目源码](https://github.com/shininghack/GITTEST.git)
 ## 声明
 
 本人是程序员小白，初学编程，以后会不定期更新。类容包括：web前端、数据库、jsp、php、node.js、vue、c语言、c++、python等。代码纯个人编写，如有错误和不足请多多指出，谢谢~
+
 
 #### 小秘密
 
